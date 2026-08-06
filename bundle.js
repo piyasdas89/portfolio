@@ -2422,23 +2422,16 @@ const ResumePreview = ({
         "x-dynamic": "true",
         "x-source-type": "computed",
         "x-source-editable": "false",
-        children: RESUME_PAGES.map((src, i) => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_31__.jsxDEV)("img", {
-          src: src,
-          alt: `Resume page ${i + 1}`,
-          "data-testid": `resume-page-${i + 1}`,
-          className: "w-full border border-border shadow-sm bg-white",
-          loading: "lazy",
-          "x-file-name": "Portfolio",
-          "x-line-number": "147",
-          "x-column": "12",
-          "x-component": "img",
-          "x-id": "Portfolio_147_12",
-          "x-dynamic": "false"
-        }, i, false, {
+        children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_31__.jsxDEV)("iframe", {
+          src: _data__WEBPACK_IMPORTED_MODULE_30__.PROFILE.resume,
+          title: "Resume Preview",
+          "data-testid": "resume-iframe",
+          className: "w-full h-[70vh] border border-border shadow-sm bg-white rounded-sm"
+        }, void 0, false, {
           fileName: _jsxFileName,
           lineNumber: 147,
-          columnNumber: 13
-        }, undefined))
+          columnNumber: 11
+        }, undefined)
       }, void 0, false, {
         fileName: _jsxFileName,
         lineNumber: 145,
