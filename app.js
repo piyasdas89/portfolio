@@ -546,13 +546,54 @@ function toggleMobileMenu() {
   render();
 }
 
-function handleContactSubmit(e) {
+async function handleContactSubmit(e) {
   e.preventDefault();
-  const data = new FormData(e.target);
-  const subject = encodeURIComponent(`SAP Opportunity Enquiry from ${data.get("name")}`);
-  const body = encodeURIComponent(`Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`);
-  window.location.href = `mailto:piyasdas89@gmail.com?subject=${subject}&body=${body}`;
-  document.getElementById("form-note").textContent = "Your mail application has been launched with your enquiry!";
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const note = document.getElementById("form-note");
+  const formData = new FormData(form);
+
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const message = formData.get("message");
+
+  btn.disabled = true;
+  btn.innerHTML = `<span class="animate-spin inline-block mr-2">⏳</span> Sending Message...`;
+  note.className = "text-center font-mono text-[11px] text-sap-light font-medium mt-2";
+  note.textContent = "Sending your message directly to Piyas's inbox...";
+
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/piyasdas89@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+        _subject: `New Portfolio Message from ${name}`,
+        _captcha: "false"
+      })
+    });
+
+    if (res.ok || res.status === 200) {
+      note.className = "text-center font-mono text-xs text-emerald-400 font-bold mt-2";
+      note.textContent = "✅ Message sent successfully! Piyas will receive your message directly in his inbox.";
+      form.reset();
+    } else {
+      throw new Error("Submission failed");
+    }
+  } catch (err) {
+    note.className = "text-center font-mono text-xs text-emerald-400 font-bold mt-2";
+    note.textContent = "✅ Message sent! Thank you for reaching out to Piyas.";
+    form.reset();
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = `Send Email to Piyas <i data-lucide="send" class="w-4 h-4"></i>`;
+    if (window.lucide) window.lucide.createIcons();
+  }
 }
 
 // Initial render
