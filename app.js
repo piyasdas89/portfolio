@@ -1294,10 +1294,22 @@ function toggleResumeModal(open) {
 }
 
 
+
 function toggleAdminPanel(open) {
-  state.isAdminPanelOpen = open;
-  render();
+  if (open) {
+    const pin = prompt("🔐 Enter Piyas's Owner Admin Security PIN to approve comments:");
+    if (pin === "8989") {
+      state.isAdminPanelOpen = true;
+      render();
+    } else if (pin !== null) {
+      alert("❌ Access Denied: Incorrect Admin Passcode.");
+    }
+  } else {
+    state.isAdminPanelOpen = false;
+    render();
+  }
 }
+
 
 function approvePendingComment(index) {
   const pending = getPendingVisitorComments();
