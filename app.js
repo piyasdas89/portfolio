@@ -300,7 +300,7 @@ function render() {
       </section>
 
       <!-- Section 1: Profile -->
-      <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
           <span class="w-8 h-px bg-sap-light"></span> 01 / PROFILE SUMMARY
         </div>
@@ -327,7 +327,7 @@ function render() {
       </section>
 
       <!-- Section 2: Capabilities (Interactive Bento Grid) -->
-      <section id="capabilities" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="capabilities" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
           <div>
             <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-2">
@@ -349,8 +349,8 @@ function render() {
 
         <!-- Bento Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          ${capabilities.filter(c => state.activeTab === 'all' || c.category === state.activeTab).map(c => `
-            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all group">
+          ${capabilities.filter(c => state.activeTab === 'all' || c.category === state.activeTab).map((c, idx) => `
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all group reveal-on-scroll stagger-${(idx % 3) + 1}">
               <div>
                 <div class="flex items-center justify-between mb-4">
                   <span class="px-2.5 py-1 rounded-md bg-sap-blue/20 border border-sap-blue/40 text-sap-light font-mono text-[10px] uppercase font-semibold">
@@ -370,7 +370,7 @@ function render() {
       </section>
 
       <!-- Section 3: Professional Experience (TCS) -->
-      <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
           <span class="w-8 h-px bg-sap-light"></span> 03 / CAREER EXPERIENCE
         </div>
@@ -406,7 +406,7 @@ function render() {
       </section>
 
       <!-- Section 4: Projects (Case Studies) -->
-      <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
           <span class="w-8 h-px bg-sap-light"></span> 04 / PROJECT CASE STUDIES
         </div>
@@ -448,15 +448,15 @@ function render() {
       </section>
 
       <!-- Section 5: Certifications Grid -->
-      <section id="certifications" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="certifications" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
           <span class="w-8 h-px bg-sap-light"></span> 05 / VERIFIED SAP CREDENTIALS
         </div>
         <h2 class="font-serif text-4xl font-bold text-white mb-12">4x SAP Certifications</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          ${certifications.map(c => `
-            <a href="${c.link}" target="_blank" rel="noreferrer" class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-sap-light/50 transition-all group">
+          ${certifications.map((c, idx) => `
+            <a href="${c.link}" target="_blank" rel="noreferrer" class="glass-card rounded-2xl p-6 flex flex-col justify-between hover:border-sap-light/50 transition-all group reveal-on-scroll stagger-${(idx % 4) + 1}">
               <div>
                 <div class="flex items-center justify-between mb-4">
                   <span class="font-mono text-xs text-slate-400 font-bold">${c.id}</span>
@@ -478,7 +478,7 @@ function render() {
       </section>
 
       <!-- Section 6: Journal / Field Notes & Articles -->
-      <section id="journal" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="journal" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
           <span class="w-8 h-px bg-sap-light"></span> 06 / JOURNAL —— NOTES &amp; ARTICLES
         </div>
@@ -573,7 +573,7 @@ function render() {
       </section>
 
       <!-- Section 6: Contact & Resume CTA -->
-      <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="glass-card rounded-3xl p-8 md:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           <div class="lg:col-span-5 space-y-6">
@@ -653,6 +653,27 @@ function render() {
       </div>
     ` : ''}
   `;
+
+  
+function initScrollObserver() {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+}
+
+  initScrollObserver();
 
   // Re-initialize Lucide Icons after DOM update
   if (window.lucide) {
