@@ -195,23 +195,44 @@ function render() {
               <a href="#contact" class="px-6 py-3.5 rounded-xl bg-transparent hover:bg-slate-800/40 text-slate-300 border border-slate-800 text-sm font-medium flex items-center gap-2 transition-all">
                 Contact Me <i data-lucide="chevron-right" class="w-4 h-4"></i>
               </a>
-            </div>
+                  <!-- Executive Metrics KPI Grid -->
+            <div class="pt-6 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <!-- KPI Card 1 -->
+              <div class="glass-card rounded-2xl p-4 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-[11px] text-sap-light uppercase font-bold tracking-wider">EXPERIENCE</span>
+                  <i data-lucide="briefcase" class="w-4 h-4 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
+                </div>
+                <div class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
+                  2.6+ <span class="text-xs font-mono text-slate-400 font-normal">Years</span>
+                </div>
+                <p class="text-[11px] text-slate-400 font-sans mt-1">Enterprise Lead at TCS</p>
+              </div>
 
-            <!-- Quick Metrics Pills -->
-            <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80">
-              <div>
-                <span class="font-serif text-3xl font-bold text-white block">2.6+</span>
-                <span class="font-mono text-xs text-slate-400 uppercase">Years at TCS</span>
+              <!-- KPI Card 2 -->
+              <div class="glass-card rounded-2xl p-4 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-[11px] text-sap-light uppercase font-bold tracking-wider">DELIVERY</span>
+                  <i data-lucide="cpu" class="w-4 h-4 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
+                </div>
+                <div class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
+                  30+ <span class="text-xs font-mono text-slate-400 font-normal">Objects</span>
+                </div>
+                <p class="text-[11px] text-slate-400 font-sans mt-1">RICEFW Production Code</p>
               </div>
-              <div>
-                <span class="font-serif text-3xl font-bold text-white block">30+</span>
-                <span class="font-mono text-xs text-slate-400 uppercase">RICEFW Objects</span>
+
+              <!-- KPI Card 3 -->
+              <div class="glass-card rounded-2xl p-4 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-[11px] text-sap-light uppercase font-bold tracking-wider">WORKFLOWS</span>
+                  <i data-lucide="git-merge" class="w-4 h-4 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
+                </div>
+                <div class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
+                  8+ <span class="text-xs font-mono text-slate-400 font-normal">SWDD</span>
+                </div>
+                <p class="text-[11px] text-slate-400 font-sans mt-1">IS-U &amp; Salesforce Bridge</p>
               </div>
-              <div>
-                <span class="font-serif text-3xl font-bold text-white block">8+</span>
-                <span class="font-mono text-xs text-slate-400 uppercase">Workflows Built</span>
-              </div>
-            </div>
+            </div>          </div>
           </div>
 
           <!-- Right Hero Executive Profile Card -->
