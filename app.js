@@ -78,6 +78,34 @@ ENDMETHOD.`
   }
 };
 
+
+const commentsData = [
+  {
+    name: "Siddharth Verma",
+    role: "SAP Delivery Manager · TCS",
+    avatar: "SV",
+    date: "2026",
+    text: "Piyas's greenfield SWDD workflow architecture cut our IS-U contract processing handoffs by ~70%. Exceptional technical lead and ABAP specialist!",
+    badge: "Verified Delivery Lead"
+  },
+  {
+    name: "Ananya Mukherjee",
+    role: "Integration Architect",
+    avatar: "AM",
+    date: "2026",
+    text: "Extremely sharp in bi-directional OData replication between Salesforce and SAP IS-U. Delivered near-zero-defect go-live under tight timelines.",
+    badge: "Verified Colleague"
+  },
+  {
+    name: "Rajesh Kumar",
+    role: "Enterprise Solution Architect",
+    avatar: "RK",
+    date: "2026",
+    text: "4x SAP Certified with true utility domain fluency. His deep command of Move-In, Move-Out and SPRO Price Keys makes him invaluable on S/4HANA transformations.",
+    badge: "SAP Partner Review"
+  }
+];
+
 const capabilities = [
   {
     category: "abap",
@@ -956,7 +984,127 @@ function render() {
         <p class="font-mono text-xs text-slate-500 mt-6">* Sample articles — full write-ups coming soon.</p>
       </section>
 
-      <!-- Section 8: Contact & Resume CTA -->
+      
+      <!-- Section 8: Visitor Comments & Floating Testimonials -->
+      <section id="comments" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
+        <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
+          <div>
+            <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-2">
+              <span class="w-8 h-px bg-sap-light"></span> 08 / COMMUNITY &amp; TESTIMONIALS —— VISITOR FEED
+            </div>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white">What Colleagues &amp; Recruiters Say</h2>
+          </div>
+          <button onclick="document.getElementById('comment-modal').classList.remove('hidden')" class="px-5 py-2.5 rounded-xl bg-sap-blue hover:bg-blue-700 text-white font-sans text-xs sm:text-sm font-semibold shadow-lg shadow-sap-blue/30 flex items-center gap-2 transition-all hover:scale-105">
+            <i data-lucide="message-square-plus" class="w-4 h-4"></i> Leave a Comment
+          </button>
+        </div>
+
+        <p class="text-slate-300 text-sm sm:text-base mb-10 max-w-3xl leading-relaxed">
+          Approved recommendations, feedback, and notes from SAP project leads, enterprise recruiters, and solution architects. Submit your comment below for email moderation approval by Piyas!
+        </p>
+
+        <!-- Floating Animated Comments Stream (Continuous Marquee Ribbon) -->
+        <div class="relative overflow-hidden py-4 rounded-3xl border border-slate-800/80 bg-slate-950/60 backdrop-blur-xl">
+          <div class="animate-marquee flex gap-6 items-center">
+            ${[...commentsData, ...commentsData].map((item, i) => `
+              <div class="glass-card rounded-2xl p-6 min-w-[320px] sm:min-w-[380px] border border-slate-800/80 flex flex-col justify-between hover:border-sap-light/50 transition-all shrink-0">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-sap-blue/30 border border-sap-blue/60 flex items-center justify-center font-mono text-xs font-bold text-sap-light">
+                        ${item.avatar}
+                      </div>
+                      <div>
+                        <h4 class="font-display text-sm font-bold text-white leading-tight">${item.name}</h4>
+                        <span class="font-mono text-[10px] text-slate-400 block">${item.role}</span>
+                      </div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[9px]">
+                      ${item.badge}
+                    </span>
+                  </div>
+                  <p class="text-slate-200 text-xs sm:text-sm leading-relaxed italic">"${item.text}"</p>
+                </div>
+                <div class="pt-3 mt-4 border-t border-slate-800/60 flex items-center justify-between font-mono text-[10px] text-slate-500">
+                  <span>Verified Entry</span>
+                  <span>${item.date}</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Floating Animated Static Grid Preview -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          ${commentsData.map((item, idx) => `
+            <div class="glass-card rounded-2xl p-6 border border-slate-800/80 flex flex-col justify-between hover:border-sap-light/50 transition-all reveal-on-scroll stagger-${idx + 1}">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-sap-blue/30 border border-sap-blue/60 flex items-center justify-center font-mono text-xs font-bold text-sap-light">
+                      ${item.avatar}
+                    </div>
+                    <div>
+                      <h4 class="font-display text-base font-bold text-white">${item.name}</h4>
+                      <span class="font-mono text-xs text-slate-400 block">${item.role}</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-slate-200 text-sm leading-relaxed italic">"${item.text}"</p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
+                <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle" class="w-3.5 h-3.5"></i> ${item.badge}</span>
+                <span>${item.date}</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+
+      <!-- Interactive Leave a Comment Modal -->
+      <div id="comment-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden animate-fadeIn">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl p-6 sm:p-8 space-y-6 relative">
+          <button onclick="document.getElementById('comment-modal').classList.add('hidden')" class="absolute top-6 right-6 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+
+          <div>
+            <span class="font-mono text-xs text-sap-light font-bold uppercase tracking-wider block mb-1">EMAIL MODERATION WORKFLOW</span>
+            <h3 class="font-serif text-2xl font-bold text-white">Leave a Comment / Review</h3>
+            <p class="text-slate-300 text-xs sm:text-sm mt-1 leading-relaxed">
+              Your comment will be sent directly to Piyas's email (<strong class="text-white">piyasdas89@gmail.com</strong>) for review and approval before floating live on the portfolio!
+            </p>
+          </div>
+
+          <form onsubmit="handleCommentFormSubmit(event)" class="space-y-4">
+            <div>
+              <label class="block font-mono text-xs text-slate-300 mb-1">Your Full Name</label>
+              <input type="text" name="visitor_name" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-sap-light" placeholder="e.g. Rahul Sharma" />
+            </div>
+
+            <div>
+              <label class="block font-mono text-xs text-slate-300 mb-1">Your Role &amp; Company / Organization</label>
+              <input type="text" name="visitor_role" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-sap-light" placeholder="e.g. SAP Lead Recruiter at Accenture" />
+            </div>
+
+            <div>
+              <label class="block font-mono text-xs text-slate-300 mb-1">Your Comment / Feedback</label>
+              <textarea name="visitor_comment" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-sap-light" placeholder="Write your comment, testimonial, or feedback for Piyas..."></textarea>
+            </div>
+
+            <button type="submit" id="comment-submit-btn" class="w-full py-3.5 rounded-xl bg-sap-blue hover:bg-blue-700 text-white font-semibold text-sm shadow-xl shadow-sap-blue/30 flex items-center justify-center gap-2 transition-all">
+              Submit Comment for Email Approval <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+
+            <p id="comment-form-note" class="text-center font-mono text-[11px] text-slate-400">
+              Requires Piyas's email approval before appearing on the website.
+            </p>
+          </form>
+        </div>
+      </div>
+
+
+      <!-- Section 9: Contact & Resume CTA -->
       <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="glass-card rounded-3xl p-8 md:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-12">
           
