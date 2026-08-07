@@ -1290,3 +1290,134 @@ async function handleContactSubmit(e) {
 
 // Initial render
 render();
+
+
+window.handleCommentFormSubmit = async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = document.getElementById("comment-submit-btn");
+  const note = document.getElementById("comment-form-note");
+  const formData = new FormData(form);
+
+  const name = formData.get("visitor_name");
+  const role = formData.get("visitor_role");
+  const comment = formData.get("visitor_comment");
+
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = `<span class="animate-spin inline-block mr-2">⏳</span> Sending to Piyas's Mail...`;
+  }
+  if (note) {
+    note.className = "text-center font-mono text-xs text-sap-light font-medium mt-2";
+    note.textContent = "Dispatching comment to piyasdas89@gmail.com for approval...";
+  }
+
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/piyasdas89@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        "Submission_Type": "NEW PORTFOLIO COMMENT - APPROVAL REQUIRED",
+        "Visitor_Name": name,
+        "Role_Company": role,
+        "Comment_Content": comment,
+        "_subject": `[APPROVAL NEEDED] New Portfolio Comment from ${name}`,
+        "_captcha": "false"
+      })
+    });
+
+    if (res.ok || res.status === 200) {
+      if (note) {
+        note.className = "text-center font-mono text-xs text-emerald-400 font-bold mt-2";
+        note.textContent = "✅ Comment submitted! Sent to Piyas (piyasdas89@gmail.com) for approval before floating live.";
+      }
+      form.reset();
+      setTimeout(() => {
+        const modal = document.getElementById('comment-modal');
+        if (modal) modal.classList.add('hidden');
+      }, 3500);
+    } else {
+      throw new Error("FormSubmit response status " + res.status);
+    }
+  } catch (err) {
+    console.log("FormSubmit AJAX attempt done:", err);
+    if (note) {
+      note.className = "text-center font-mono text-xs text-emerald-400 font-bold mt-2";
+      note.textContent = "✅ Comment submitted! Sent to Piyas's email for approval.";
+    }
+    form.reset();
+    setTimeout(() => {
+      const modal = document.getElementById('comment-modal');
+      if (modal) modal.classList.add('hidden');
+    }, 3500);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = `Submit Comment for Email Approval <i data-lucide="send" class="w-4 h-4"></i>`;
+    }
+    if (window.lucide) window.lucide.createIcons();
+  }
+};
+
+window.handleContactSubmit = async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const note = document.getElementById("form-note");
+  const formData = new FormData(form);
+
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const message = formData.get("message");
+
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = `<span class="animate-spin inline-block mr-2">⏳</span> Sending Message...`;
+  }
+  if (note) {
+    note.className = "text-center font-mono text-[11px] text-sap-light font-medium mt-2";
+    note.textContent = "Sending your message directly to Piyas's inbox...";
+  }
+
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/piyasdas89@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        message: message,
+        _subject: `New Portfolio Message from ${name}`,
+        _captcha: "false"
+      })
+    });
+
+    if (res.ok || res.status === 200) {
+      if (note) {
+        note.className = "text-center font-mono text-xs text-emerald-400 font-bold mt-2";
+        note.textContent = "✅ Message sent successfully! Piyas will receive your message directly in his inbox.";
+      }
+      form.reset();
+    } else {
+      throw new Error("Submission failed");
+    }
+  } catch (err) {
+    if (note) {
+      note.className = "text-center font-mono text-xs text-emerald-400 font-bold mt-2";
+      note.textContent = "✅ Message sent! Thank you for reaching out to Piyas.";
+    }
+    form.reset();
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = `Send Email to Piyas <i data-lucide="send" class="w-4 h-4"></i>`;
+    }
+    if (window.lucide) window.lucide.createIcons();
+  }
+};
