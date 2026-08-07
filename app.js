@@ -172,49 +172,50 @@ const certifications = [
 function render() {
   const app = document.getElementById('app');
   app.innerHTML = `
-    <!-- Header -->
-    <header class="fixed top-0 left-0 right-0 z-40 bg-[#0A0F1D]/80 backdrop-blur-xl border-b border-slate-800/80 transition-all">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <a href="#top" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-lg bg-sap-blue flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-sap-blue/30 group-hover:scale-105 transition-transform">
+        <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-[#070B14]/85 backdrop-blur-xl border-b border-slate-800/80 transition-all">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <a href="#top" class="flex items-center gap-3 shrink-0 group">
+          <div class="w-10 h-10 rounded-xl bg-sap-blue flex items-center justify-center font-mono font-bold text-white shadow-lg shadow-sap-blue/30 group-hover:scale-105 transition-transform">
             PD
           </div>
           <div>
-            <span class="font-serif text-2xl font-bold text-white tracking-wide block leading-none">Piyas<span class="text-sap-light">.</span>Das</span>
-            <span class="font-mono text-[10px] tracking-widest text-slate-400 uppercase block mt-1">SAP ABAP &amp; IS-U EXPERT</span>
+            <span class="font-serif text-xl font-extrabold text-white tracking-tight block leading-none">Piyas<span class="text-sap-light">.</span>Das</span>
+            <span class="font-mono text-[10px] tracking-widest text-slate-400 uppercase block mt-1">SAP ABAP &amp; IS-U SPECIALIST</span>
           </div>
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center gap-8 font-sans text-sm text-slate-300 font-medium">
-          <a href="#about" class="hover:text-sap-light transition-colors">Profile</a>
-          <a href="#capabilities" class="hover:text-sap-light transition-colors">Capabilities</a>
-          <a href="#experience" class="hover:text-sap-light transition-colors">Experience</a>
-          <a href="#projects" class="hover:text-sap-light transition-colors">Projects</a>
-          <a href="#education" class="hover:text-sap-light transition-colors">Education</a>
-          <a href="#certifications" class="hover:text-sap-light transition-colors">Certifications</a>
-          <a href="#journal" class="hover:text-sap-light transition-colors">Journal</a>
-          <a href="#contact" class="hover:text-sap-light transition-colors">Contact</a>
+        <!-- Desktop Navigation (lg breakpoint with proper gap and text sizing) -->
+        <nav class="hidden lg:flex items-center gap-5 xl:gap-7 font-sans text-xs xl:text-sm text-slate-200 font-medium">
+          <a href="#about" class="hover:text-sap-light transition-colors py-1">Profile</a>
+          <a href="#capabilities" class="hover:text-sap-light transition-colors py-1">Capabilities</a>
+          <a href="#experience" class="hover:text-sap-light transition-colors py-1">Experience</a>
+          <a href="#projects" class="hover:text-sap-light transition-colors py-1">Projects</a>
+          <a href="#education" class="hover:text-sap-light transition-colors py-1">Education</a>
+          <a href="#certifications" class="hover:text-sap-light transition-colors py-1">Certifications</a>
+          <a href="#journal" class="hover:text-sap-light transition-colors py-1">Journal</a>
+          <a href="#contact" class="hover:text-sap-light transition-colors py-1">Contact</a>
         </nav>
 
-        <div class="hidden md:flex items-center gap-4">
-          <button onclick="toggleResumeModal(true)" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-mono font-semibold flex items-center gap-2 transition-all hover:border-sap-light/50">
-            <i data-lucide="file-text" class="w-4 h-4 text-sap-light"></i> Preview Resume
+        <!-- Desktop Actions -->
+        <div class="hidden lg:flex items-center gap-3 shrink-0">
+          <button onclick="toggleResumeModal(true)" class="px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-mono font-semibold flex items-center gap-2 transition-all hover:border-sap-light/50">
+            <i data-lucide="file-text" class="w-3.5 h-3.5 text-sap-light"></i> Preview Resume
           </button>
-          <a href="assets/piyas-das-resume.pdf" download class="px-5 py-2 rounded-lg bg-sap-blue hover:bg-blue-700 text-white font-sans text-xs font-semibold shadow-lg shadow-sap-blue/30 flex items-center gap-2 transition-all hover:scale-105">
-            <i data-lucide="download" class="w-4 h-4"></i> Download PDF
+          <a href="assets/piyas-das-resume.pdf" download class="px-4 py-2 rounded-xl bg-sap-blue hover:bg-blue-700 text-white font-sans text-xs font-semibold shadow-lg shadow-sap-blue/30 flex items-center gap-2 transition-all hover:scale-105">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> Download PDF
           </a>
         </div>
 
         <!-- Mobile Hamburger Button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300">
+        <button onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl bg-slate-800 text-slate-300">
           <i data-lucide="${state.isMobileMenuOpen ? 'x' : 'menu'}" class="w-6 h-6"></i>
         </button>
       </div>
 
       <!-- Mobile Menu Drawer -->
       ${state.isMobileMenuOpen ? `
-        <div class="md:hidden bg-slate-900 border-b border-slate-800 px-6 py-6 space-y-4">
+        <div class="lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-6 space-y-4">
           <a href="#about" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Profile</a>
           <a href="#capabilities" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Capabilities</a>
           <a href="#experience" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Experience</a>
@@ -224,10 +225,10 @@ function render() {
           <a href="#journal" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Journal</a>
           <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Contact</a>
           <div class="pt-4 flex flex-col gap-3">
-            <button onclick="toggleResumeModal(true); toggleMobileMenu()" class="w-full py-3 rounded-lg bg-slate-800 text-slate-200 text-sm font-mono flex items-center justify-center gap-2">
+            <button onclick="toggleResumeModal(true); toggleMobileMenu()" class="w-full py-3 rounded-xl bg-slate-800 text-slate-200 text-sm font-mono flex items-center justify-center gap-2">
               <i data-lucide="file-text" class="w-4 h-4 text-sap-light"></i> Preview Resume
             </button>
-            <a href="assets/piyas-das-resume.pdf" download class="w-full py-3 rounded-lg bg-sap-blue text-white text-sm font-semibold flex items-center justify-center gap-2">
+            <a href="assets/piyas-das-resume.pdf" download class="w-full py-3 rounded-xl bg-sap-blue text-white text-sm font-semibold flex items-center justify-center gap-2">
               <i data-lucide="download" class="w-4 h-4"></i> Download PDF Resume
             </a>
           </div>
@@ -257,7 +258,7 @@ function render() {
               ABAP Cloud &amp; Enterprise Workflows.
             </h1>
 
-            <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-sans font-normal">
+            <p class="text-slate-200 text-lg sm:text-xl max-w-2xl leading-relaxed font-sans font-normal">
               SAP ABAP Developer, IS-U &amp; CRM Consultant with <span class="text-white font-semibold">2.6 years of hands-on experience</span> architecting automation across SAP IS-U and Salesforce at <span class="text-white font-semibold">Tata Consultancy Services (TCS)</span>. Trusted with greenfield build responsibility: 8+ SWDD Workflows &amp; 6+ IDoc structures from scratch.
             </p>
 
@@ -524,7 +525,7 @@ function render() {
                   <i data-lucide="cpu" class="w-5 h-5 text-slate-500 group-hover:text-sap-light transition-colors"></i>
                 </div>
                 <h3 class="font-serif text-2xl font-bold text-white mb-2 group-hover:text-sap-light transition-colors">${c.title}</h3>
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">${c.desc}</p>
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed mb-6">${c.desc}</p>
               </div>
               <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800 font-mono text-[10px] text-slate-400">
                 ${c.tags.map(t => `<span class="bg-slate-800/80 px-2 py-0.5 rounded text-slate-300">${t}</span>`).join('')}
@@ -559,7 +560,7 @@ function render() {
           </p>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-slate-300 text-xs sm:text-sm leading-relaxed">
-            <ul class="space-y-4 list-disc list-inside marker:text-sap-light">
+            <ul class="space-y-4 list-disc list-inside marker:text-sap-light text-slate-200 text-sm sm:text-base leading-relaxed">
               <li><strong class="text-white">Workflow &amp; OData:</strong> Architected 8+ end-to-end SAP Workflows (SWDD) for IS-U processes, triggered via Salesforce API through OData replication — cutting handoff effort by ~70%.</li>
               <li><strong class="text-white">IDocs, BAPIs &amp; Migration:</strong> Designed 6+ IDoc structures and BAPIs from scratch, generated ALE interfaces with tRFC port configuration, and executed data migration via BDC/LSMW for Salesforce transition projects.</li>
               <li><strong class="text-white">Enhancements:</strong> Implemented 4+ BAdIs and Customer Exits for Move-In/Move-Out contract processing, enabling seamless Salesforce–SAP IS-U integration.</li>
@@ -608,7 +609,7 @@ function render() {
                   <strong class="text-white">Objective:</strong> Migrate legacy SAP CRM-based utility contract management onto a Salesforce front-end while retaining SAP IS-U as the system of record.
                 </p>
 
-                <ul class="space-y-3 font-sans text-xs sm:text-sm text-slate-300">
+                <ul class="space-y-3 font-sans text-sm sm:text-base text-slate-200 leading-relaxed">
                   <li class="flex items-start gap-2.5">
                     <span class="text-sap-light font-mono font-bold">➔</span>
                     <span>Built 8+ IS-U workflows from scratch (Move-In, Move-Out, Switch-In/Out, End/Start of Supply, Internal Start/Stop).</span>
@@ -731,7 +732,7 @@ function render() {
                   <i data-lucide="users" class="w-4 h-4 text-amber-400"></i> Mentorship &amp; Leadership Readiness
                 </div>
                 <h3 class="font-serif text-2xl font-bold text-white leading-snug">Technical Lead &amp; Mentor</h3>
-                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
                   Currently operating as a Technical Lead at TCS, Piyas has mentored two freshers into SAP ABAP development — further specializing one into CRM technical work and the other into IS-U technical and functional skills — reflecting his readiness for lead-level ownership that extends beyond individual delivery.
                 </p>
               </div>
@@ -770,7 +771,7 @@ function render() {
                 </div>
                 <h3 class="font-serif text-xl font-bold text-white group-hover:text-sap-light transition-colors mb-2">${c.title}</h3>
                 <p class="text-xs text-slate-400 font-sans">${c.org} · ${c.validity}</p>
-                <p class="text-slate-300 text-xs leading-relaxed mt-3 mb-4">${c.desc}</p>
+                <p class="text-slate-200 text-sm leading-relaxed mt-3 mb-4">${c.desc}</p>
               </div>
               <div class="pt-4 border-t border-slate-800 flex items-center justify-between font-mono text-xs text-sap-light group-hover:underline">
                 <span>View Credential</span>
