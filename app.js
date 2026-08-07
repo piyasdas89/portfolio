@@ -1009,7 +1009,7 @@ function render() {
 
       
       
-      <!-- Section 8: Visitor Comments & Floating Testimonials -->
+            <!-- Section 8: Visitor Comments & Floating Testimonials -->
       <section id="comments" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
           <div>
@@ -1028,24 +1028,17 @@ function render() {
           </div>
         </div>
 
-            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white">What Colleagues &amp; Recruiters Say</h2>
-          </div>
-          <button onclick="document.getElementById('comment-modal').classList.remove('hidden')" class="px-5 py-2.5 rounded-xl bg-sap-blue hover:bg-blue-700 text-white font-sans text-xs sm:text-sm font-semibold shadow-lg shadow-sap-blue/30 flex items-center gap-2 transition-all hover:scale-105">
-            <i data-lucide="message-square-plus" class="w-4 h-4"></i> Leave a Comment
-          </button>
-        </div>
-
-        <p class="text-slate-300 text-sm sm:text-base mb-10 max-w-3xl leading-relaxed">
-          Approved recommendations, feedback, and notes from SAP project leads, enterprise recruiters, and solution architects. Submit your comment below for email moderation approval by Piyas!
+        <p class="text-slate-300 text-sm sm:text-base mb-8 max-w-3xl leading-relaxed">
+          Approved recommendations and notes from SAP project leads, recruiters, and architects. Approved comments stream infinitely in the floating ribbon below!
         </p>
 
-        <!-- Floating Animated Comments Stream (Continuous Marquee Ribbon) -->
-        <div class="relative overflow-hidden py-4 rounded-3xl border border-slate-800/80 bg-slate-950/60 backdrop-blur-xl">
+        <!-- Compact Infinite Floating Marquee Ribbon (Fixed Height Scalable Product) -->
+        <div class="relative overflow-hidden py-5 px-2 rounded-3xl border border-slate-800/80 bg-slate-950/60 backdrop-blur-xl">
           <div class="animate-marquee flex gap-6 items-center">
-            ${[...getLiveApprovedComments(), ...getLiveApprovedComments()].map((item, i) => `
-              <div class="glass-card rounded-2xl p-6 min-w-[320px] sm:min-w-[380px] border border-slate-800/80 flex flex-col justify-between hover:border-sap-light/50 transition-all shrink-0">
+            ${[...getLiveApprovedComments(), ...getLiveApprovedComments(), ...getLiveApprovedComments()].map((item, i) => `
+              <div class="glass-card rounded-2xl p-5 min-w-[320px] sm:min-w-[380px] max-w-[420px] border border-slate-800/80 flex flex-col justify-between hover:border-sap-light/50 transition-all shrink-0">
                 <div>
-                  <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center justify-between mb-2.5">
                     <div class="flex items-center gap-3">
                       <div class="w-9 h-9 rounded-full bg-sap-blue/30 border border-sap-blue/60 flex items-center justify-center font-mono text-xs font-bold text-sap-light">
                         ${item.avatar}
@@ -1061,39 +1054,13 @@ function render() {
                   </div>
                   <p class="text-slate-200 text-xs sm:text-sm leading-relaxed italic">"${item.text}"</p>
                 </div>
-                <div class="pt-3 mt-4 border-t border-slate-800/60 flex items-center justify-between font-mono text-[10px] text-slate-500">
-                  <span>Verified Entry</span>
+                <div class="pt-3 mt-3 border-t border-slate-800/60 flex items-center justify-between font-mono text-[10px] text-slate-500">
+                  <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle" class="w-3 h-3"></i> Approved Entry</span>
                   <span>${item.date}</span>
                 </div>
               </div>
             `).join('')}
           </div>
-        </div>
-
-        <!-- Floating Animated Static Grid Preview -->
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          ${getLiveApprovedComments().map((item, idx) => `
-            <div class="glass-card rounded-2xl p-6 border border-slate-800/80 flex flex-col justify-between hover:border-sap-light/50 transition-all reveal-on-scroll stagger-${idx + 1}">
-              <div>
-                <div class="flex items-center justify-between mb-4">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-sap-blue/30 border border-sap-blue/60 flex items-center justify-center font-mono text-xs font-bold text-sap-light">
-                      ${item.avatar}
-                    </div>
-                    <div>
-                      <h4 class="font-display text-base font-bold text-white">${item.name}</h4>
-                      <span class="font-mono text-xs text-slate-400 block">${item.role}</span>
-                    </div>
-                  </div>
-                </div>
-                <p class="text-slate-200 text-sm leading-relaxed italic">"${item.text}"</p>
-              </div>
-              <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
-                <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="check-circle" class="w-3.5 h-3.5"></i> ${item.badge}</span>
-                <span>${item.date}</span>
-              </div>
-            </div>
-          `).join('')}
         </div>
       </section>
 
