@@ -212,33 +212,77 @@ function render() {
             </div>
           </div>
 
-          <!-- Right Hero Profile & Photo Card -->
+          <!-- Right Hero Executive Profile Card -->
           <div class="lg:col-span-5">
-            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl space-y-6 text-center lg:text-left">
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-700/80 bg-gradient-to-b from-slate-900/95 to-slate-950/95 backdrop-blur-2xl shadow-2xl hover:shadow-sap-blue/20 hover:border-sap-light/60 transition-all duration-500 space-y-6 text-center lg:text-left group relative overflow-hidden">
+              
+              <!-- Subtle Background Ambient Light Glow -->
+              <div class="absolute -top-12 -right-12 w-40 h-40 bg-sap-blue/20 rounded-full blur-3xl pointer-events-none"></div>
+              <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-sap-light/10 rounded-full blur-3xl pointer-events-none"></div>
+
+              <!-- Interactive Portrait Photo Frame -->
               <div class="relative inline-block mx-auto lg:mx-0">
-                <img src="assets/piyas-das.jpg" alt="Piyas Das" class="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-2xl object-cover border-2 border-sap-blue shadow-2xl mx-auto" />
-                <div class="absolute -bottom-3 -right-3 px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-[11px] font-mono text-sap-light shadow-lg">
-                  Dual SAP Certified
+                <div class="w-52 h-52 sm:w-60 sm:h-60 lg:w-64 lg:h-64 rounded-2xl overflow-hidden border-2 border-sap-blue/80 shadow-2xl relative mx-auto group/photo">
+                  <img src="assets/piyas-das.jpg" alt="Piyas Das" class="w-full h-full object-cover object-top grayscale opacity-90 group-hover/photo:grayscale-0 group-hover/photo:opacity-100 group-hover/photo:scale-105 transition-all duration-700" />
+                  <!-- Subtle gradient vignette over photo -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none"></div>
+                </div>
+
+                <!-- Floating Live Status Badge (Pulsing Green) -->
+                <div class="absolute -top-3 -left-3 px-3 py-1 bg-slate-950/90 border border-emerald-500/40 rounded-full text-[10px] font-mono text-emerald-400 shadow-xl flex items-center gap-1.5 backdrop-blur-md">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span>IS-U &amp; ABAP CLOUD READY</span>
+                </div>
+
+                <!-- Floating SAP Certified Badge (Gold) -->
+                <div class="absolute -bottom-3 -right-3 px-3 py-1.5 bg-slate-950/95 border border-amber-500/50 rounded-xl text-[11px] font-mono text-amber-400 shadow-2xl flex items-center gap-1.5 backdrop-blur-md">
+                  <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i>
+                  <span class="font-bold">Dual SAP Certified</span>
                 </div>
               </div>
-              <div>
-                <h3 class="font-serif text-3xl font-bold text-white">Piyas Das</h3>
-                <p class="font-mono text-sm text-sap-light mt-1 font-semibold">SAP ABAP &amp; Workflow Specialist</p>
-                <p class="text-xs text-slate-400 mt-2 flex items-center justify-center lg:justify-start gap-1 font-sans">
-                  <i data-lucide="map-pin" class="w-4 h-4 text-slate-400"></i> Kolkata, West Bengal (TCS)
+
+              <!-- Name & Title Details -->
+              <div class="pt-2">
+                <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-wide group-hover:text-sap-light transition-colors">Piyas Das</h3>
+                <p class="font-mono text-sm text-sap-light mt-1 font-semibold flex items-center justify-center lg:justify-start gap-2">
+                  <span class="w-2 h-2 rounded-full bg-sap-light"></span> SAP ABAP &amp; Workflow Specialist
+                </p>
+                <p class="text-xs text-slate-400 mt-2 flex items-center justify-center lg:justify-start gap-1.5 font-sans">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-slate-400"></i> Kolkata, West Bengal · TCS Technical Lead
                 </p>
               </div>
-              <div class="pt-4 border-t border-slate-800 text-xs font-mono text-slate-300 space-y-2">
-                <p class="flex items-center gap-2 justify-center lg:justify-start">
-                  <i data-lucide="award" class="w-4 h-4 text-sap-light"></i> 4x SAP Credly Certified
-                </p>
-                <p class="flex items-center gap-2 justify-center lg:justify-start">
-                  <i data-lucide="briefcase" class="w-4 h-4 text-sap-light"></i> 2.6+ Years YOE at TCS
-                </p>
-                <p class="flex items-center gap-2 justify-center lg:justify-start">
-                  <i data-lucide="layers" class="w-4 h-4 text-sap-light"></i> 8+ SWDD Workflows &amp; 30+ RICEFW
-                </p>
+
+              <!-- Interactive Metric Chips -->
+              <div class="pt-4 border-t border-slate-800 text-xs font-mono text-slate-300 space-y-2.5">
+                <a href="#certifications" class="p-2.5 rounded-xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-sap-light/40 flex items-center justify-between group/chip transition-all">
+                  <span class="flex items-center gap-2 text-slate-200 font-medium">
+                    <i data-lucide="award" class="w-4 h-4 text-amber-400"></i> 4x SAP Credly Certified
+                  </span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover/chip:text-sap-light group-hover/chip:translate-x-1 transition-all"></i>
+                </a>
+
+                <a href="#experience" class="p-2.5 rounded-xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-sap-light/40 flex items-center justify-between group/chip transition-all">
+                  <span class="flex items-center gap-2 text-slate-200 font-medium">
+                    <i data-lucide="briefcase" class="w-4 h-4 text-sap-light"></i> 2.6+ Years YOE at TCS
+                  </span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover/chip:text-sap-light group-hover/chip:translate-x-1 transition-all"></i>
+                </a>
+
+                <a href="#capabilities" class="p-2.5 rounded-xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-sap-light/40 flex items-center justify-between group/chip transition-all">
+                  <span class="flex items-center gap-2 text-slate-200 font-medium">
+                    <i data-lucide="layers" class="w-4 h-4 text-emerald-400"></i> 8+ SWDD Workflows &amp; 30+ RICEFW
+                  </span>
+                  <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover/chip:text-sap-light group-hover/chip:translate-x-1 transition-all"></i>
+                </a>
               </div>
+
+              <!-- Quick Resume Action Button on Card -->
+              <div class="pt-2">
+                <button onclick="toggleResumeModal(true)" class="w-full py-3 rounded-xl bg-sap-blue/20 hover:bg-sap-blue/30 border border-sap-blue/50 text-sap-light font-mono text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-sap-blue/30">
+                  <i data-lucide="file-text" class="w-4 h-4"></i> Preview Full Resume PDF
+                </button>
+              </div>
+
             </div>
           </div>
 
