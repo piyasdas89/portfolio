@@ -212,36 +212,33 @@ function render() {
             </div>
           </div>
 
-          <!-- Right Hero Interactive Code Terminal & Spotlight Photo -->
-          <div class="lg:col-span-5 space-y-6">
-            <!-- Professional Spotlight Frame -->
-            <div class="glass-card rounded-2xl p-4 flex items-center gap-5 border border-slate-800">
-              <img src="assets/piyas-das.jpg" alt="Piyas Das" class="w-20 h-20 rounded-xl object-cover border-2 border-sap-blue shadow-lg" />
+          <!-- Right Hero Profile & Photo Card -->
+          <div class="lg:col-span-5">
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl space-y-6 text-center lg:text-left">
+              <div class="relative inline-block mx-auto lg:mx-0">
+                <img src="assets/piyas-das.jpg" alt="Piyas Das" class="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-2xl object-cover border-2 border-sap-blue shadow-2xl mx-auto" />
+                <div class="absolute -bottom-3 -right-3 px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-[11px] font-mono text-sap-light shadow-lg">
+                  Dual SAP Certified
+                </div>
+              </div>
               <div>
-                <h3 class="font-serif text-xl font-bold text-white">Piyas Das</h3>
-                <p class="font-mono text-xs text-sap-light mt-0.5">SAP ABAP & Workflow Specialist</p>
-                <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
-                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Kolkata, West Bengal (TCS)
+                <h3 class="font-serif text-3xl font-bold text-white">Piyas Das</h3>
+                <p class="font-mono text-sm text-sap-light mt-1 font-semibold">SAP ABAP &amp; Workflow Specialist</p>
+                <p class="text-xs text-slate-400 mt-2 flex items-center justify-center lg:justify-start gap-1 font-sans">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-slate-400"></i> Kolkata, West Bengal (TCS)
                 </p>
               </div>
-            </div>
-
-            <!-- Terminal Component -->
-            <div class="rounded-2xl bg-slate-950 border border-slate-800 shadow-2xl overflow-hidden font-mono text-xs">
-              <div class="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
-                  <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
-                  <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                  <span class="text-slate-400 text-[11px] ml-2 font-mono">${codeSnippets[state.activeCodeTab].filename}</span>
-                </div>
-                <div class="flex gap-1 bg-slate-950 p-1 rounded-lg border border-slate-800 text-[10px]">
-                  <button onclick="setCodeTab('abap')" class="px-2.5 py-1 rounded ${state.activeCodeTab==='abap'?'bg-sap-blue text-white':'text-slate-400'} transition-colors">ABAP</button>
-                  <button onclick="setCodeTab('odata')" class="px-2.5 py-1 rounded ${state.activeCodeTab==='odata'?'bg-sap-blue text-white':'text-slate-400'} transition-colors">OData</button>
-                  <button onclick="setCodeTab('idoc')" class="px-2.5 py-1 rounded ${state.activeCodeTab==='idoc'?'bg-sap-blue text-white':'text-slate-400'} transition-colors">IDoc</button>
-                </div>
+              <div class="pt-4 border-t border-slate-800 text-xs font-mono text-slate-300 space-y-2">
+                <p class="flex items-center gap-2 justify-center lg:justify-start">
+                  <i data-lucide="award" class="w-4 h-4 text-sap-light"></i> 4x SAP Credly Certified
+                </p>
+                <p class="flex items-center gap-2 justify-center lg:justify-start">
+                  <i data-lucide="briefcase" class="w-4 h-4 text-sap-light"></i> 2.6+ Years YOE at TCS
+                </p>
+                <p class="flex items-center gap-2 justify-center lg:justify-start">
+                  <i data-lucide="layers" class="w-4 h-4 text-sap-light"></i> 8+ SWDD Workflows &amp; 30+ RICEFW
+                </p>
               </div>
-              <pre class="p-4 text-slate-300 leading-relaxed overflow-x-auto h-64 font-mono text-[11px] bg-[#070B14]"><code>${escapeHtml(codeSnippets[state.activeCodeTab].code)}</code></pre>
             </div>
           </div>
 
