@@ -117,6 +117,7 @@ function render() {
           <a href="#experience" class="hover:text-sap-light transition-colors">Experience</a>
           <a href="#projects" class="hover:text-sap-light transition-colors">Projects</a>
           <a href="#certifications" class="hover:text-sap-light transition-colors">Certifications</a>
+          <a href="#journal" class="hover:text-sap-light transition-colors">Journal</a>
           <a href="#contact" class="hover:text-sap-light transition-colors">Contact</a>
         </nav>
 
@@ -143,6 +144,7 @@ function render() {
           <a href="#experience" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Experience</a>
           <a href="#projects" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Projects</a>
           <a href="#certifications" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Certifications</a>
+          <a href="#journal" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Journal</a>
           <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Contact</a>
           <div class="pt-4 flex flex-col gap-3">
             <button onclick="toggleResumeModal(true); toggleMobileMenu()" class="w-full py-3 rounded-lg bg-slate-800 text-slate-200 text-sm font-mono flex items-center justify-center gap-2">
@@ -473,6 +475,98 @@ function render() {
             </a>
           `).join('')}
         </div>
+      </section>
+
+      <!-- Section 6: Journal / Field Notes & Articles -->
+      <section id="journal" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
+          <span class="w-8 h-px bg-sap-light"></span> 06 / JOURNAL —— NOTES &amp; ARTICLES
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-12">
+          Field notes from SAP delivery.
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Article 1 -->
+          <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-sap-light/50 transition-all">
+            <div class="relative h-48 bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950 overflow-hidden p-6 flex flex-col justify-between">
+              <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:16px_16px]"></div>
+              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10">
+                WORKFLOW
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-white group-hover:text-sap-light transition-colors leading-snug mb-3">
+                  Building an SAP Workflow (SWDD) from scratch for IS-U Move-In
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  A practical walk-through of agent determination, deadline monitoring and error branches for a greenfield IS-U workflow.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
+                <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i> 8 min read</span>
+                <a href="javascript:void(0)" onclick="alert('Article link coming soon!')" class="text-sap-light font-medium group-hover:underline flex items-center gap-1">
+                  Read <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-sap-light/50 transition-all">
+            <div class="relative h-48 bg-gradient-to-br from-slate-950 via-indigo-950 to-blue-950 overflow-hidden p-6 flex flex-col justify-between">
+              <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#0033A0_1px,transparent_1px)] [background-size:12px_12px]"></div>
+              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10">
+                INTEGRATION
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-white group-hover:text-sap-light transition-colors leading-snug mb-3">
+                  Bi-directional OData replication between SAP IS-U and Salesforce
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  How I cut payload errors ~35% by rethinking real-time OData services for utility contract processing.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
+                <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i> 6 min read</span>
+                <a href="javascript:void(0)" onclick="alert('Article link coming soon!')" class="text-sap-light font-medium group-hover:underline flex items-center gap-1">
+                  Read <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-sap-light/50 transition-all">
+            <div class="relative h-48 bg-gradient-to-br from-indigo-950 via-slate-900 to-sky-950 overflow-hidden p-6 flex flex-col justify-between">
+              <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:14px_14px]"></div>
+              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10">
+                ABAP CLOUD
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-serif text-xl font-bold text-white group-hover:text-sap-light transition-colors leading-snug mb-3">
+                  Getting ABAP Cloud ready: CDS Views, AMDP and the three-layer model
+                </h3>
+                <p class="text-slate-400 text-xs leading-relaxed">
+                  Notes from my 2026 ABAP Cloud certification — the mental model that makes RISE/GROW conversations click.
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between font-mono text-xs text-slate-400">
+                <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i> 7 min read</span>
+                <a href="javascript:void(0)" onclick="alert('Article link coming soon!')" class="text-sap-light font-medium group-hover:underline flex items-center gap-1">
+                  Read <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="font-mono text-xs text-slate-500 mt-6">* Sample articles — full write-ups coming soon.</p>
       </section>
 
       <!-- Section 6: Contact & Resume CTA -->
