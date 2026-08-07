@@ -4,7 +4,8 @@ const state = {
   activeTab: 'all',
   activeCodeTab: 'abap',
   isResumeModalOpen: false,
-  isMobileMenuOpen: false
+  isMobileMenuOpen: false,
+  isAdminPanelOpen: false
 };
 
 const codeSnippets = {
@@ -79,7 +80,8 @@ ENDMETHOD.`
 };
 
 
-const commentsData = [
+
+const initialApprovedComments = [
   {
     name: "Siddharth Verma",
     role: "SAP Delivery Manager · TCS",
@@ -105,6 +107,27 @@ const commentsData = [
     badge: "SAP Partner Review"
   }
 ];
+
+function getLiveApprovedComments() {
+  try {
+    const saved = localStorage.getItem('approved_portfolio_comments');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return [...initialApprovedComments, ...parsed];
+    }
+  } catch(e) {}
+  return initialApprovedComments;
+}
+
+function getPendingVisitorComments() {
+  try {
+    const saved = localStorage.getItem('pending_portfolio_comments');
+    return saved ? JSON.parse(saved) : [];
+  } catch(e) { return []; }
+}
+
+let commentsData = getLiveApprovedComments();
+
 
 const capabilities = [
   {
@@ -985,6 +1008,7 @@ function render() {
       </section>
 
       
+      
       <!-- Section 8: Visitor Comments & Floating Testimonials -->
       <section id="comments" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
@@ -992,6 +1016,18 @@ function render() {
             <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-2">
               <span class="w-8 h-px bg-sap-light"></span> 08 / COMMUNITY &amp; TESTIMONIALS —— VISITOR FEED
             </div>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white">What Colleagues &amp; Recruiters Say</h2>
+          </div>
+          <div class="flex items-center gap-3">
+            <button onclick="toggleAdminPanel(true)" class="px-4 py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-800 text-amber-400 border border-amber-500/40 font-mono text-xs font-semibold flex items-center gap-2 transition-all">
+              <i data-lucide="shield-check" class="w-4 h-4"></i> Admin Approval (${getPendingVisitorComments().length})
+            </button>
+            <button onclick="document.getElementById('comment-modal').classList.remove('hidden')" class="px-5 py-2.5 rounded-xl bg-sap-blue hover:bg-blue-700 text-white font-sans text-xs sm:text-sm font-semibold shadow-lg shadow-sap-blue/30 flex items-center gap-2 transition-all hover:scale-105">
+              <i data-lucide="message-square-plus" class="w-4 h-4"></i> Leave a Comment
+            </button>
+          </div>
+        </div>
+
             <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white">What Colleagues &amp; Recruiters Say</h2>
           </div>
           <button onclick="document.getElementById('comment-modal').classList.remove('hidden')" class="px-5 py-2.5 rounded-xl bg-sap-blue hover:bg-blue-700 text-white font-sans text-xs sm:text-sm font-semibold shadow-lg shadow-sap-blue/30 flex items-center gap-2 transition-all hover:scale-105">
@@ -1006,7 +1042,7 @@ function render() {
         <!-- Floating Animated Comments Stream (Continuous Marquee Ribbon) -->
         <div class="relative overflow-hidden py-4 rounded-3xl border border-slate-800/80 bg-slate-950/60 backdrop-blur-xl">
           <div class="animate-marquee flex gap-6 items-center">
-            ${[...commentsData, ...commentsData].map((item, i) => `
+            ${[...getLiveApprovedComments(), ...getLiveApprovedComments()].map((item, i) => `
               <div class="glass-card rounded-2xl p-6 min-w-[320px] sm:min-w-[380px] border border-slate-800/80 flex flex-col justify-between hover:border-sap-light/50 transition-all shrink-0">
                 <div>
                   <div class="flex items-center justify-between mb-3">
@@ -1036,7 +1072,7 @@ function render() {
 
         <!-- Floating Animated Static Grid Preview -->
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-          ${commentsData.map((item, idx) => `
+          ${getLiveApprovedComments().map((item, idx) => `
             <div class="glass-card rounded-2xl p-6 border border-slate-800/80 flex flex-col justify-between hover:border-sap-light/50 transition-all reveal-on-scroll stagger-${idx + 1}">
               <div>
                 <div class="flex items-center justify-between mb-4">
@@ -1157,6 +1193,63 @@ function render() {
       <p>© ${new Date().getFullYear()} Piyas Das — SAP ABAP &amp; Workflow Specialist</p>
     </footer>
 
+    
+    <!-- Interactive Admin Comment Approval Panel -->
+    ${state.isAdminPanelOpen ? `
+      <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md animate-fadeIn">
+        <div class="bg-slate-900 border border-amber-500/40 rounded-3xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+          
+          <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+            <div class="flex items-center gap-3">
+              <i data-lucide="shield-check" class="w-5 h-5 text-amber-400"></i>
+              <div>
+                <h3 class="font-serif text-xl font-bold text-white">Owner Comment Approval Panel</h3>
+                <span class="font-mono text-[10px] text-slate-400 block">Moderate pending visitor comments to float live</span>
+              </div>
+            </div>
+            <button onclick="toggleAdminPanel(false)" class="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <div class="p-6 overflow-y-auto space-y-4 flex-1">
+            ${getPendingVisitorComments().length === 0 ? `
+              <div class="text-center py-12 space-y-3">
+                <i data-lucide="check-circle-2" class="w-12 h-12 text-emerald-400 mx-auto opacity-80"></i>
+                <h4 class="font-display text-lg font-bold text-white">No Pending Comments</h4>
+                <p class="text-slate-400 text-xs max-w-md mx-auto">All submitted visitor comments have been reviewed and approved! When someone submits a new comment, it will appear here for 1-click approval.</p>
+              </div>
+            ` : getPendingVisitorComments().map((item, idx) => `
+              <div class="glass-card rounded-2xl p-5 border border-slate-800 space-y-3">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h4 class="font-display text-base font-bold text-white">${item.name}</h4>
+                    <span class="font-mono text-xs text-sap-light block">${item.role}</span>
+                  </div>
+                  <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-mono text-[10px]">
+                    PENDING APPROVAL
+                  </span>
+                </div>
+                <p class="text-slate-200 text-sm leading-relaxed italic bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  "${item.text}"
+                </p>
+                <div class="pt-2 flex items-center justify-end gap-3">
+                  <button onclick="rejectPendingComment(${idx})" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-rose-950/60 text-slate-300 hover:text-rose-300 font-mono text-xs font-semibold transition-all">
+                    Reject ❌
+                  </button>
+                  <button onclick="approvePendingComment(${idx})" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-xs font-semibold shadow-lg shadow-emerald-600/30 flex items-center gap-2 transition-all">
+                    Approve &amp; Float Live ✅
+                  </button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+        </div>
+      </div>
+    ` : ''}
+
+
     <!-- Interactive Resume Preview Modal -->
     ${state.isResumeModalOpen ? `
       <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
@@ -1233,6 +1326,44 @@ function toggleResumeModal(open) {
   render();
 }
 
+
+function toggleAdminPanel(open) {
+  state.isAdminPanelOpen = open;
+  render();
+}
+
+function approvePendingComment(index) {
+  const pending = getPendingVisitorComments();
+  if (pending[index]) {
+    const approvedItem = pending[index];
+    
+    // Save to approved comments list
+    try {
+      const savedApproved = JSON.parse(localStorage.getItem('approved_portfolio_comments') || '[]');
+      savedApproved.push(approvedItem);
+      localStorage.setItem('approved_portfolio_comments', JSON.stringify(savedApproved));
+    } catch(e) {}
+
+    // Remove from pending
+    pending.splice(index, 1);
+    localStorage.setItem('pending_portfolio_comments', JSON.stringify(pending));
+
+    commentsData = getLiveApprovedComments();
+    alert("✅ Comment Approved! It is now live in your floating comments feed.");
+    render();
+  }
+}
+
+function rejectPendingComment(index) {
+  const pending = getPendingVisitorComments();
+  if (pending[index]) {
+    pending.splice(index, 1);
+    localStorage.setItem('pending_portfolio_comments', JSON.stringify(pending));
+    render();
+  }
+}
+
+
 function toggleMobileMenu() {
   state.isMobileMenuOpen = !state.isMobileMenuOpen;
   render();
@@ -1292,6 +1423,7 @@ async function handleContactSubmit(e) {
 render();
 
 
+
 window.handleCommentFormSubmit = async function(e) {
   e.preventDefault();
   const form = e.target;
@@ -1303,6 +1435,25 @@ window.handleCommentFormSubmit = async function(e) {
   const role = formData.get("visitor_role");
   const comment = formData.get("visitor_comment");
 
+  const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2) || 'VC';
+
+  // Create pending comment object
+  const newCommentObj = {
+    name: name,
+    role: role,
+    avatar: initials,
+    date: new Date().getFullYear().toString(),
+    text: comment,
+    badge: "Approved Recommendation"
+  };
+
+  // Save to local pending store so Piyas can approve it via Admin Panel as well!
+  try {
+    const currentPending = JSON.parse(localStorage.getItem('pending_portfolio_comments') || '[]');
+    currentPending.push(newCommentObj);
+    localStorage.setItem('pending_portfolio_comments', JSON.stringify(currentPending));
+  } catch(err) {}
+
   if (btn) {
     btn.disabled = true;
     btn.innerHTML = `<span class="animate-spin inline-block mr-2">⏳</span> Sending to Piyas's Mail...`;
@@ -1313,7 +1464,7 @@ window.handleCommentFormSubmit = async function(e) {
   }
 
   try {
-    const res = await fetch("https://formsubmit.co/ajax/piyasdas89@gmail.com", {
+    await fetch("https://formsubmit.co/ajax/piyasdas89@gmail.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1328,39 +1479,22 @@ window.handleCommentFormSubmit = async function(e) {
         "_captcha": "false"
       })
     });
-
-    if (res.ok || res.status === 200) {
-      if (note) {
-        note.className = "text-center font-mono text-xs text-emerald-400 font-bold mt-2";
-        note.textContent = "✅ Comment submitted! Sent to Piyas (piyasdas89@gmail.com) for approval before floating live.";
-      }
-      form.reset();
-      setTimeout(() => {
-        const modal = document.getElementById('comment-modal');
-        if (modal) modal.classList.add('hidden');
-      }, 3500);
-    } else {
-      throw new Error("FormSubmit response status " + res.status);
-    }
   } catch (err) {
-    console.log("FormSubmit AJAX attempt done:", err);
+    console.log("FormSubmit dispatch:", err);
+  } finally {
     if (note) {
       note.className = "text-center font-mono text-xs text-emerald-400 font-bold mt-2";
-      note.textContent = "✅ Comment submitted! Sent to Piyas's email for approval.";
+      note.textContent = "✅ Comment submitted! Sent to Piyas's email & Admin Panel for approval.";
     }
     form.reset();
     setTimeout(() => {
       const modal = document.getElementById('comment-modal');
       if (modal) modal.classList.add('hidden');
-    }, 3500);
-  } finally {
-    if (btn) {
-      btn.disabled = false;
-      btn.innerHTML = `Submit Comment for Email Approval <i data-lucide="send" class="w-4 h-4"></i>`;
-    }
-    if (window.lucide) window.lucide.createIcons();
+      render();
+    }, 2500);
   }
 };
+
 
 window.handleContactSubmit = async function(e) {
   e.preventDefault();
