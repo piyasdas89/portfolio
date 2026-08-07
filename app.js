@@ -489,9 +489,10 @@ function render() {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Article 1 -->
           <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-sap-light/50 transition-all">
-            <div class="relative h-48 bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950 overflow-hidden p-6 flex flex-col justify-between">
-              <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:16px_16px]"></div>
-              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10">
+            <div class="relative h-52 overflow-hidden p-6 flex flex-col justify-between group/img">
+              <img src="assets/article-workflow.jpg" alt="SAP Workflow SWDD" class="absolute inset-0 w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 brightness-90" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10 shadow-lg">
                 WORKFLOW
               </span>
             </div>
@@ -515,9 +516,10 @@ function render() {
 
           <!-- Article 2 -->
           <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-sap-light/50 transition-all">
-            <div class="relative h-48 bg-gradient-to-br from-slate-950 via-indigo-950 to-blue-950 overflow-hidden p-6 flex flex-col justify-between">
-              <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#0033A0_1px,transparent_1px)] [background-size:12px_12px]"></div>
-              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10">
+            <div class="relative h-52 overflow-hidden p-6 flex flex-col justify-between group/img">
+              <img src="assets/article-integration.jpg" alt="SAP OData Salesforce Integration" class="absolute inset-0 w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 brightness-90" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10 shadow-lg">
                 INTEGRATION
               </span>
             </div>
@@ -541,9 +543,10 @@ function render() {
 
           <!-- Article 3 -->
           <div class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col justify-between group hover:border-sap-light/50 transition-all">
-            <div class="relative h-48 bg-gradient-to-br from-indigo-950 via-slate-900 to-sky-950 overflow-hidden p-6 flex flex-col justify-between">
-              <div class="absolute inset-0 opacity-30 bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:14px_14px]"></div>
-              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10">
+            <div class="relative h-52 overflow-hidden p-6 flex flex-col justify-between group/img">
+              <img src="assets/article-abap-cloud.jpg" alt="ABAP Cloud CDS Views" class="absolute inset-0 w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 brightness-90" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+              <span class="px-2.5 py-1 rounded bg-sap-blue border border-sap-blue/60 text-white font-mono text-[10px] uppercase font-bold tracking-wider self-start relative z-10 shadow-lg">
                 ABAP CLOUD
               </span>
             </div>
