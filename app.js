@@ -169,7 +169,7 @@ function render() {
         <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           <!-- Left Hero Copy -->
-          <div class="lg:col-span-7 space-y-6">
+          <div class="lg:col-span-7 space-y-6 reveal-on-scroll stagger-1">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-sap-light text-xs font-mono tracking-wider">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
               AVAILABLE FOR SAP CONSULTING & LEAD ROLES
@@ -215,7 +215,7 @@ function render() {
           </div>
 
           <!-- Right Hero Executive Profile Card -->
-          <div class="lg:col-span-5">
+          <div class="lg:col-span-5 reveal-on-scroll stagger-2">
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-700/80 bg-gradient-to-b from-slate-900/95 to-slate-950/95 backdrop-blur-2xl shadow-2xl hover:shadow-sap-blue/20 hover:border-sap-light/60 transition-all duration-500 space-y-6 text-center lg:text-left group relative overflow-hidden">
               
               <!-- Subtle Background Ambient Light Glow -->
@@ -658,14 +658,17 @@ function render() {
 function initScrollObserver() {
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -50px 0px',
-    threshold: 0.1
+    rootMargin: '-30px 0px -30px 0px',
+    threshold: 0.08
   };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
+      } else {
+        // Bi-directional continuous animation: remove class when element leaves view
+        entry.target.classList.remove('is-visible');
       }
     });
   }, observerOptions);
