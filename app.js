@@ -443,48 +443,127 @@ function render() {
           </div>
         </div>
 
-        <!-- Core Focus Areas (5 Pillars from PDF Page 1) -->
-        <div class="mt-16 pt-12 border-t border-slate-800">
-          <h3 class="font-serif text-2xl font-bold text-white mb-6">Core Focus Areas</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 font-sans text-xs text-slate-300">
+                <!-- Core Focus Areas (5 Pillars from PDF Page 1 - Animated & Responsive Glass Cards) -->
+        <div class="mt-16 pt-12 border-t border-slate-800/80">
+          <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
+            <div>
+              <span class="font-mono text-xs text-sap-light font-bold uppercase tracking-widest block mb-1">KEY TECHNICAL SPECTRUM</span>
+              <h3 class="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">Core Focus Areas</h3>
+            </div>
+            <span class="px-3.5 py-1.5 rounded-full bg-sap-blue/20 border border-sap-blue/40 text-sap-light font-mono text-xs font-semibold">
+              ✦ 5 Technical Pillars
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3">
-              <span class="text-sap-light font-mono font-bold text-sm">01</span>
+            <!-- Card 1 -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800/80 hover:border-sap-light/60 transition-all duration-300 group/core reveal-on-scroll stagger-1 flex flex-col justify-between">
               <div>
-                <strong class="text-white block mb-1">Greenfield SWDD &amp; IDoc Architecture</strong>
-                Greenfield SAP Workflow (SWDD) and IDoc/ALE architecture, built from scratch rather than maintained.
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-10 h-10 rounded-xl bg-sap-blue/20 border border-sap-blue/40 flex items-center justify-center font-mono text-sm font-bold text-sap-light group-hover/core:bg-sap-blue group-hover/core:text-white transition-colors">
+                    01
+                  </span>
+                  <i data-lucide="git-merge" class="w-5 h-5 text-slate-400 group-hover/core:text-sap-light transition-colors"></i>
+                </div>
+                <h4 class="font-display text-lg sm:text-xl font-bold text-white mb-2 group-hover/core:text-sap-light transition-colors">
+                  Greenfield SWDD &amp; IDoc Architecture
+                </h4>
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                  Greenfield SAP Workflow (<strong class="text-white">SWDD</strong>) and IDoc/ALE architecture built from scratch rather than maintained.
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center gap-2 font-mono text-xs text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>SWDD · IDocs · ALE · tRFC</span>
               </div>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3">
-              <span class="text-sap-light font-mono font-bold text-sm">02</span>
+            <!-- Card 2 -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800/80 hover:border-sap-light/60 transition-all duration-300 group/core reveal-on-scroll stagger-2 flex flex-col justify-between">
               <div>
-                <strong class="text-white block mb-1">SAP IS-U ↔ Salesforce Integration</strong>
-                Bi-directional SAP IS-U to Salesforce integration via real-time OData services.
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-10 h-10 rounded-xl bg-sap-blue/20 border border-sap-blue/40 flex items-center justify-center font-mono text-sm font-bold text-sap-light group-hover/core:bg-sap-blue group-hover/core:text-white transition-colors">
+                    02
+                  </span>
+                  <i data-lucide="refresh-cw" class="w-5 h-5 text-slate-400 group-hover/core:text-sap-light transition-colors"></i>
+                </div>
+                <h4 class="font-display text-lg sm:text-xl font-bold text-white mb-2 group-hover/core:text-sap-light transition-colors">
+                  SAP IS-U ↔ Salesforce Integration
+                </h4>
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                  Bi-directional real-time SAP IS-U to Salesforce integration via optimized <strong class="text-white">OData Services</strong> (~35% error cut).
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center gap-2 font-mono text-xs text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-sap-light"></span>
+                <span>OData v4 · API Bridge · Sync</span>
               </div>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3">
-              <span class="text-sap-light font-mono font-bold text-sm">03</span>
+            <!-- Card 3 -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800/80 hover:border-sap-light/60 transition-all duration-300 group/core reveal-on-scroll stagger-3 flex flex-col justify-between">
               <div>
-                <strong class="text-white block mb-1">Utility Contract Lifecycle Ownership</strong>
-                Full process ownership of Move-In, Move-Out, Switch-In/Out, and Start/End of Supply.
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-10 h-10 rounded-xl bg-sap-blue/20 border border-sap-blue/40 flex items-center justify-center font-mono text-sm font-bold text-sap-light group-hover/core:bg-sap-blue group-hover/core:text-white transition-colors">
+                    03
+                  </span>
+                  <i data-lucide="zap" class="w-5 h-5 text-slate-400 group-hover/core:text-sap-light transition-colors"></i>
+                </div>
+                <h4 class="font-display text-lg sm:text-xl font-bold text-white mb-2 group-hover/core:text-sap-light transition-colors">
+                  Utility Contract Lifecycle Ownership
+                </h4>
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                  End-to-end process fluency: <strong class="text-white">Move-In, Move-Out, Switch-In/Out</strong>, and Start/End of Supply execution.
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center gap-2 font-mono text-xs text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                <span>IS-U Domain · Move-In/Out</span>
               </div>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3">
-              <span class="text-sap-light font-mono font-bold text-sm">04</span>
+            <!-- Card 4 -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800/80 hover:border-sap-light/60 transition-all duration-300 group/core reveal-on-scroll stagger-4 flex flex-col justify-between">
               <div>
-                <strong class="text-white block mb-1">Modern ABAP Cloud Readiness</strong>
-                Proficiency in CDS Views (3-layer model), AMDP HDB classes, and SAP BTP architecture.
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-10 h-10 rounded-xl bg-sap-blue/20 border border-sap-blue/40 flex items-center justify-center font-mono text-sm font-bold text-sap-light group-hover/core:bg-sap-blue group-hover/core:text-white transition-colors">
+                    04
+                  </span>
+                  <i data-lucide="cloud" class="w-5 h-5 text-slate-400 group-hover/core:text-sap-light transition-colors"></i>
+                </div>
+                <h4 class="font-display text-lg sm:text-xl font-bold text-white mb-2 group-hover/core:text-sap-light transition-colors">
+                  Modern ABAP Cloud Readiness
+                </h4>
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                  Hands-on proficiency in <strong class="text-white">CDS Views</strong> (3-layer model), <strong class="text-white">AMDP</strong> classes, and SAP BTP architecture.
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center gap-2 font-mono text-xs text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>ABAP Cloud · CDS · AMDP · BTP</span>
               </div>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3 md:col-span-2 lg:col-span-1">
-              <span class="text-sap-light font-mono font-bold text-sm">05</span>
+            <!-- Card 5 -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800/80 hover:border-sap-light/60 transition-all duration-300 group/core reveal-on-scroll stagger-5 md:col-span-2 lg:col-span-2 flex flex-col justify-between">
               <div>
-                <strong class="text-white block mb-1">SAP CRM Technical Grounding</strong>
-                Web UI enhancements, One Order Framework, BOL/GenIL layer, and CRM Workbench configuration.
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-10 h-10 rounded-xl bg-sap-blue/20 border border-sap-blue/40 flex items-center justify-center font-mono text-sm font-bold text-sap-light group-hover/core:bg-sap-blue group-hover/core:text-white transition-colors">
+                    05
+                  </span>
+                  <i data-lucide="layout" class="w-5 h-5 text-slate-400 group-hover/core:text-sap-light transition-colors"></i>
+                </div>
+                <h4 class="font-display text-lg sm:text-xl font-bold text-white mb-2 group-hover/core:text-sap-light transition-colors">
+                  SAP CRM Technical Grounding
+                </h4>
+                <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+                  Web UI Workbench enhancements, One Order Framework, BOL/GenIL layer, and <strong class="text-white">42 Custom CRM Price Keys</strong> via SPRO configuration.
+                </p>
+              </div>
+              <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center gap-2 font-mono text-xs text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-sap-light"></span>
+                <span>CRM Web UI · One Order · BOL/GenIL · SPRO</span>
               </div>
             </div>
 
