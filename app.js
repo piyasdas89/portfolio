@@ -223,9 +223,9 @@ function render() {
               <!-- Interactive Portrait Photo Frame -->
               <div class="relative inline-block mx-auto lg:mx-0">
                 <div class="w-52 h-52 sm:w-60 sm:h-60 lg:w-64 lg:h-64 rounded-2xl overflow-hidden border-2 border-sap-blue/80 shadow-2xl relative mx-auto group/photo">
-                  <img src="assets/piyas-das.jpg" alt="Piyas Das" class="w-full h-full object-cover object-top grayscale opacity-90 group-hover/photo:grayscale-0 group-hover/photo:opacity-100 group-hover/photo:scale-105 transition-all duration-700" />
+                  <img src="assets/piyas-das.jpg" alt="Piyas Das" class="w-full h-full object-cover object-top opacity-100 group-hover/photo:scale-105 transition-all duration-700" />
                   <!-- Subtle gradient vignette over photo -->
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none"></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none"></div>
                 </div>
 
                 <!-- Floating Live Status Badge (Pulsing Green) -->
@@ -235,9 +235,9 @@ function render() {
                 </div>
 
                 <!-- Floating SAP Certified Badge (Gold) -->
-                <div class="absolute -bottom-3 -right-3 px-3 py-1.5 bg-slate-950/95 border border-amber-500/50 rounded-xl text-[11px] font-mono text-amber-400 shadow-2xl flex items-center gap-1.5 backdrop-blur-md">
+                <div class="absolute -bottom-3 -right-3 px-3.5 py-1.5 bg-slate-950/95 border border-amber-500/50 rounded-xl text-[11px] font-mono text-amber-400 shadow-2xl flex items-center gap-1.5 backdrop-blur-md">
                   <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i>
-                  <span class="font-bold">Dual SAP Certified</span>
+                  <span class="font-bold">4x SAP Certified</span>
                 </div>
               </div>
 
