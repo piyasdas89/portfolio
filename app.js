@@ -79,19 +79,94 @@ ENDMETHOD.`
 };
 
 const capabilities = [
-  { category: "abap", title: "OO-ABAP & RICEFW Objects", desc: "Delivered 30+ production RICEFW objects (ALV Reports, Function Modules, BAPIs, BAdIs, Smartforms) across SAP IS-U & CRM with 25+ TDDs.", tags: ["OO-ABAP", "RICEFW", "BAdIs", "SmartForms", "ALV"], highlight: "30+ Objects" },
-  { category: "workflow", title: "SAP Workflow Builder (SWDD)", desc: "Architected 8+ end-to-end SAP Workflows with deadline monitoring, container element mapping, agent determination, and SWUS error recovery.", tags: ["SWDD", "SWIA", "BOR Objects", "Deadline Monitor"], highlight: "70% Effort Cut" },
-  { category: "integration", title: "Salesforce ↔ SAP Integration", desc: "Built bi-directional real-time OData services and 6+ IDoc structures (BDBG, tRFC ports) connecting Salesforce front end to SAP IS-U core.", tags: ["OData v4", "IDocs/ALE", "BAPIs", "tRFC"], highlight: "35% Error Reduction" },
-  { category: "isu", title: "SAP IS-U Utility Domain", desc: "Deep hands-on ownership of Move-In, Move-Out, Switch-In/Out, Start/Stop Supply, MDT automation, and Billing/Invoicing enhancements.", tags: ["SAP IS-U", "EPRODCUST", "Billing", "Contract Lifecycle"], highlight: "Utility Specialist" },
-  { category: "abap", title: "Modern ABAP Cloud & S/4HANA", desc: "Experience with CDS Views, AMDP, SAP BTP, ABAP Cloud syntax, Fiori architecture, and SQL Trace performance tuning.", tags: ["ABAP Cloud", "CDS Views", "AMDP", "SAP BTP"], highlight: "45% Fast Batch" },
-  { category: "crm", title: "SAP CRM & Web UI Customization", desc: "CRM Web UI enhancements, One Order framework, custom BAdI error handling, and 42 custom CRM Price Keys via SPRO.", tags: ["CRM Web UI", "One Order", "SPRO Price Keys"], highlight: "42 Price Keys" }
+  {
+    category: "abap",
+    title: "ABAP Development & Enhancements",
+    desc: "Object-oriented ABAP development across the full enhancement framework — User Exits, Customer Exits, BAdIs, and implicit/explicit enhancements. Delivered 30+ production RICEFW objects including custom reports, ALV outputs, function modules, and Module Pool programs with time-bound Business Agreement retrieval logic. Enhanced CRM Delivery Notice program lifting output accuracy by ~25%.",
+    tags: ["OO-ABAP", "RICEFW", "User/Customer Exits", "BAdIs", "Implicit/Explicit Enhancements", "ALV Reports", "Module Pool", "Smartforms", "DDIC"],
+    highlight: "30+ RICEFW Objects"
+  },
+  {
+    category: "workflow",
+    title: "Workflow & Process Automation",
+    desc: "Architectural ownership building 8+ end-to-end SAP Workflows (SWDD) from scratch for IS-U processes (Move-In, Move-Out, Switch-In/Out, Start/End of Supply) triggered via Salesforce API calls through OData. Command of agent determination, deadline monitoring, event/error handling, and PRD debugging via SWUS WITH REFERENCE resulting in ~30% fewer post-production issues.",
+    tags: ["SAP Workflow Builder (SWDD)", "SWIA", "SWI1", "BOR/ABAP Object", "Agent Determination", "Deadline Monitoring", "Event Handling"],
+    highlight: "8+ SWDD Workflows"
+  },
+  {
+    category: "integration",
+    title: "Cross-Application Integration",
+    desc: "Designed 6+ IDoc structures from scratch, generated ALE interfaces, configured ports via tRFC, alongside custom BAPI development for cross-system exchange. Optimized real-time OData services for bi-directional replication between Salesforce and SAP IS-U, cutting payload errors by ~35%. Dual fluency on both SAP and Salesforce sides of live integrations.",
+    tags: ["IDocs/ALE Creation", "BAPI Creation", "RFCs", "OData Services", "tRFC Port Configuration"],
+    highlight: "35% Error Cut"
+  },
+  {
+    category: "isu",
+    title: "IS-U Utility Domain Expertise",
+    desc: "Deep ownership of underlying utility business processes — Move-In, Move-Out, Switch-In/Out, Internal Start/Stop, and Start/End of Supply. Process fluency explains why a workflow branches the way it does, not only how it was coded — directly applicable to utility-sector clients running IS-U on ECC or S/4HANA.",
+    tags: ["SAP IS-U", "Move-In/Move-Out", "Switch-In/Switch-Out", "Contract Lifecycle Management"],
+    highlight: "Utility Domain Fluency"
+  },
+  {
+    category: "crm",
+    title: "SAP CRM Technical Expertise",
+    desc: "CRM Web UI enhancements — component views, visibility rules, error handling via Web UI Workbench — alongside One Order Framework and BOL/GenIL layer. Owned CRM Price Keys project, configuring 42 custom price keys via SPRO, lifting UI data clarity by ~30%.",
+    tags: ["CRM Web UI", "Web UI Component Workbench", "One Order Framework", "BOL/GenIL", "CRM Workbench", "SPRO Configuration"],
+    highlight: "42 SPRO Price Keys"
+  },
+  {
+    category: "abap",
+    title: "SAP Platforms & Modern ABAP Cloud",
+    desc: "Platform experience spans SAP IS-U, SAP CRM, and S/4HANA with CDS Views built across standard 3-layer architecture (Basic Interface, Composite/Reuse, Consumption) and AMDP classes implementing IF_AMDP_MARKER_HDB for CDS table functions. Certified Back-End Developer (ABAP Cloud) and BTP Solution Architect to support RISE/GROW advisory.",
+    tags: ["S/4HANA", "SAP BTP", "CDS Views", "AMDP", "ABAP Cloud", "SAP Fiori", "SPRO", "Transport Management"],
+    highlight: "RISE/GROW Ready"
+  },
+  {
+    category: "integration",
+    title: "Data Migration & Performance Tuning",
+    desc: "Executed data migration using BDC, LSMW, and BAPI integration for Salesforce transition. Performance tuning: optimized 13+ ABAP reports through Runtime Analysis and SQL Trace, cutting batch-job runtime by ~45%. L2/L3 production support resolving live agent-determination failures and deadline misconfigurations in PRD.",
+    tags: ["BDC", "LSMW", "BAPI", "Runtime Analysis", "SQL Trace", "L2/L3 Production Support", "Debugging"],
+    highlight: "45% Runtime Cut"
+  }
 ];
 
 const certifications = [
-  { id: "01", title: "SAP Certified Generative AI Developer", org: "SAP Learning Hub", validity: "2026 — 2027", link: "https://www.credly.com/badges/415ea417-dd84-449e-97f7-7b34e196205f/public_url", badge: "AI Developer" },
-  { id: "02", title: "SAP Certified Back-End Developer — ABAP Cloud", org: "SAP Learning Hub", validity: "2026 — 2027", link: "https://www.credly.com/badges/78c5c71b-24ba-407b-a694-05abc5321dda/public_url", badge: "ABAP Cloud" },
-  { id: "03", title: "SAP Certified Fiori Application Developer", org: "SAP Learning Hub", validity: "2026 — 2027", link: "https://www.credly.com/badges/0fab69be-d921-4d77-8204-6ea97691caa4/public_url", badge: "SAP Fiori" },
-  { id: "04", title: "SAP Certified BTP Solution Architect", org: "SAP Learning Hub", validity: "2026 — 2027", link: "https://www.credly.com/badges/e842b952-7250-4e6c-a6d0-00ea49ac49be/public_url", badge: "BTP Architect" }
+  {
+    id: "01",
+    title: "SAP Certified Generative AI Developer",
+    org: "SAP Learning Hub",
+    validity: "2026 — 2027",
+    link: "https://www.credly.com/badges/415ea417-dd84-449e-97f7-7b34e196205f/public_url",
+    badge: "AI Developer",
+    desc: "Validates applied knowledge of integrating generative AI capabilities, including SAP Joule, into SAP business processes and custom extensions."
+  },
+  {
+    id: "02",
+    title: "SAP Certified Back-End Developer — ABAP Cloud",
+    org: "SAP Learning Hub",
+    validity: "2026 — 2027",
+    link: "https://www.credly.com/badges/78c5c71b-24ba-407b-a694-05abc5321dda/public_url",
+    badge: "ABAP Cloud",
+    desc: "Confirms proficiency in ABAP Cloud development practices — restricted/released APIs, CDS-based data modeling, and cloud-ready extensibility patterns."
+  },
+  {
+    id: "03",
+    title: "SAP Certified Fiori Application Developer",
+    org: "SAP Learning Hub",
+    validity: "2026 — 2027",
+    link: "https://www.credly.com/badges/0fab69be-d921-4d77-8204-6ea97691caa4/public_url",
+    badge: "SAP Fiori",
+    desc: "Validates the ability to design and extend Fiori Elements and freestyle SAPUI5 applications on modern SAP front-ends."
+  },
+  {
+    id: "04",
+    title: "SAP Certified BTP Solution Architect",
+    org: "SAP Learning Hub",
+    validity: "2026 — 2027",
+    link: "https://www.credly.com/badges/e842b952-7250-4e6c-a6d0-00ea49ac49be/public_url",
+    badge: "BTP Architect",
+    desc: "Demonstrates architectural fluency across SAP Business Technology Platform, supporting RISE/GROW with SAP advisory conversations."
+  }
 ];
 
 function render() {
@@ -106,7 +181,7 @@ function render() {
           </div>
           <div>
             <span class="font-serif text-2xl font-bold text-white tracking-wide block leading-none">Piyas<span class="text-sap-light">.</span>Das</span>
-            <span class="font-mono text-[10px] tracking-widest text-slate-400 uppercase block mt-1">SAP ABAP & IS-U EXPERT</span>
+            <span class="font-mono text-[10px] tracking-widest text-slate-400 uppercase block mt-1">SAP ABAP &amp; IS-U EXPERT</span>
           </div>
         </a>
 
@@ -116,6 +191,7 @@ function render() {
           <a href="#capabilities" class="hover:text-sap-light transition-colors">Capabilities</a>
           <a href="#experience" class="hover:text-sap-light transition-colors">Experience</a>
           <a href="#projects" class="hover:text-sap-light transition-colors">Projects</a>
+          <a href="#education" class="hover:text-sap-light transition-colors">Education</a>
           <a href="#certifications" class="hover:text-sap-light transition-colors">Certifications</a>
           <a href="#journal" class="hover:text-sap-light transition-colors">Journal</a>
           <a href="#contact" class="hover:text-sap-light transition-colors">Contact</a>
@@ -143,6 +219,7 @@ function render() {
           <a href="#capabilities" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Capabilities</a>
           <a href="#experience" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Experience</a>
           <a href="#projects" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Projects</a>
+          <a href="#education" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Education</a>
           <a href="#certifications" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Certifications</a>
           <a href="#journal" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Journal</a>
           <a href="#contact" onclick="toggleMobileMenu()" class="block text-slate-200 text-base font-medium py-2">Contact</a>
@@ -172,7 +249,7 @@ function render() {
           <div class="lg:col-span-7 space-y-6 reveal-on-scroll stagger-1">
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-sap-light text-xs font-mono tracking-wider">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              AVAILABLE FOR SAP CONSULTING & LEAD ROLES
+              AVAILABLE FOR SAP CONSULTING &amp; LEAD ROLES
             </div>
 
             <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.08]">
@@ -181,7 +258,7 @@ function render() {
             </h1>
 
             <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed font-sans font-normal">
-              SAP ABAP &amp; Workflow Specialist with <span class="text-white font-semibold">2.6+ years at TCS</span>. Specialized in bridging <span class="text-white font-semibold">SAP IS-U</span> and <span class="text-white font-semibold">Salesforce</span> via greenfield SWDD workflows, IDoc/ALE interfaces, and real-time OData integration.
+              SAP ABAP Developer, IS-U &amp; CRM Consultant with <span class="text-white font-semibold">2.6 years of hands-on experience</span> architecting automation across SAP IS-U and Salesforce at <span class="text-white font-semibold">Tata Consultancy Services (TCS)</span>. Trusted with greenfield build responsibility: 8+ SWDD Workflows &amp; 6+ IDoc structures from scratch.
             </p>
 
             <!-- Hero Action Buttons -->
@@ -195,44 +272,58 @@ function render() {
               <a href="#contact" class="px-6 py-3.5 rounded-xl bg-transparent hover:bg-slate-800/40 text-slate-300 border border-slate-800 text-sm font-medium flex items-center gap-2 transition-all">
                 Contact Me <i data-lucide="chevron-right" class="w-4 h-4"></i>
               </a>
-                  <!-- Executive Metrics KPI Grid -->
-            <div class="pt-6 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            </div>
+
+            <!-- Executive Metrics KPI Grid -->
+            <div class="pt-6 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-4 gap-3">
               <!-- KPI Card 1 -->
-              <div class="glass-card rounded-2xl p-4 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-[11px] text-sap-light uppercase font-bold tracking-wider">EXPERIENCE</span>
-                  <i data-lucide="briefcase" class="w-4 h-4 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
+              <div class="glass-card rounded-2xl p-3.5 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-mono text-[10px] text-sap-light uppercase font-bold tracking-wider">EXPERIENCE</span>
+                  <i data-lucide="briefcase" class="w-3.5 h-3.5 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
                 </div>
-                <div class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
-                  2.6+ <span class="text-xs font-mono text-slate-400 font-normal">Years</span>
+                <div class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
+                  2.6 <span class="text-[10px] font-mono text-slate-400 font-normal">Years</span>
                 </div>
-                <p class="text-[11px] text-slate-400 font-sans mt-1">Enterprise Lead at TCS</p>
+                <p class="text-[10px] text-slate-400 font-sans mt-0.5">TCS Tech Lead</p>
               </div>
 
               <!-- KPI Card 2 -->
-              <div class="glass-card rounded-2xl p-4 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-[11px] text-sap-light uppercase font-bold tracking-wider">DELIVERY</span>
-                  <i data-lucide="cpu" class="w-4 h-4 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
+              <div class="glass-card rounded-2xl p-3.5 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-mono text-[10px] text-sap-light uppercase font-bold tracking-wider">DELIVERY</span>
+                  <i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
                 </div>
-                <div class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
-                  30+ <span class="text-xs font-mono text-slate-400 font-normal">Objects</span>
+                <div class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
+                  30+ <span class="text-[10px] font-mono text-slate-400 font-normal">Objects</span>
                 </div>
-                <p class="text-[11px] text-slate-400 font-sans mt-1">RICEFW Production Code</p>
+                <p class="text-[10px] text-slate-400 font-sans mt-0.5">RICEFW PRD Code</p>
               </div>
 
               <!-- KPI Card 3 -->
-              <div class="glass-card rounded-2xl p-4 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
-                <div class="flex items-center justify-between mb-2">
-                  <span class="font-mono text-[11px] text-sap-light uppercase font-bold tracking-wider">WORKFLOWS</span>
-                  <i data-lucide="git-merge" class="w-4 h-4 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
+              <div class="glass-card rounded-2xl p-3.5 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-mono text-[10px] text-sap-light uppercase font-bold tracking-wider">WORKFLOWS</span>
+                  <i data-lucide="git-merge" class="w-3.5 h-3.5 text-slate-500 group-hover/kpi:text-sap-light transition-colors"></i>
                 </div>
-                <div class="font-serif text-3xl sm:text-4xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
-                  8+ <span class="text-xs font-mono text-slate-400 font-normal">SWDD</span>
+                <div class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
+                  8+ <span class="text-[10px] font-mono text-slate-400 font-normal">SWDD</span>
                 </div>
-                <p class="text-[11px] text-slate-400 font-sans mt-1">IS-U &amp; Salesforce Bridge</p>
+                <p class="text-[10px] text-slate-400 font-sans mt-0.5">IS-U Greenfield</p>
               </div>
-            </div>          </div>
+
+              <!-- KPI Card 4 -->
+              <div class="glass-card rounded-2xl p-3.5 border border-slate-800/80 hover:border-sap-light/50 transition-all duration-300 group/kpi flex flex-col justify-between">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="font-mono text-[10px] text-amber-400 uppercase font-bold tracking-wider">CREDENTIALS</span>
+                  <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i>
+                </div>
+                <div class="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover/kpi:scale-105 transition-transform origin-left">
+                  4 <span class="text-[10px] font-mono text-slate-400 font-normal">SAP Badges</span>
+                </div>
+                <p class="text-[10px] text-slate-400 font-sans mt-0.5">ABAP Cloud &amp; BTP</p>
+              </div>
+            </div>
           </div>
 
           <!-- Right Hero Executive Profile Card -->
@@ -247,17 +338,16 @@ function render() {
               <div class="relative inline-block mx-auto lg:mx-0">
                 <div class="w-52 h-52 sm:w-60 sm:h-60 lg:w-64 lg:h-64 rounded-2xl overflow-hidden border-2 border-sap-blue/80 shadow-2xl relative mx-auto group/photo">
                   <img src="assets/piyas-das.jpg" alt="Piyas Das" class="w-full h-full object-cover object-top opacity-100 group-hover/photo:scale-105 transition-all duration-700" />
-                  <!-- Subtle gradient vignette over photo -->
                   <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none"></div>
                 </div>
 
-                <!-- Floating Live Status Badge (Pulsing Green) -->
+                <!-- Floating Live Status Badge -->
                 <div class="absolute -top-3 -left-3 px-3 py-1 bg-slate-950/90 border border-emerald-500/40 rounded-full text-[10px] font-mono text-emerald-400 shadow-xl flex items-center gap-1.5 backdrop-blur-md">
                   <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                   <span>IS-U &amp; ABAP CLOUD READY</span>
                 </div>
 
-                <!-- Floating SAP Certified Badge (Gold) -->
+                <!-- Floating SAP Certified Badge -->
                 <div class="absolute -bottom-3 -right-3 px-3.5 py-1.5 bg-slate-950/95 border border-amber-500/50 rounded-xl text-[11px] font-mono text-amber-400 shadow-2xl flex items-center gap-1.5 backdrop-blur-md">
                   <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i>
                   <span class="font-bold">4x SAP Certified</span>
@@ -286,7 +376,7 @@ function render() {
 
                 <a href="#experience" class="p-2.5 rounded-xl bg-slate-950/80 hover:bg-slate-900 border border-slate-800 hover:border-sap-light/40 flex items-center justify-between group/chip transition-all">
                   <span class="flex items-center gap-2 text-slate-200 font-medium">
-                    <i data-lucide="briefcase" class="w-4 h-4 text-sap-light"></i> 2.6+ Years YOE at TCS
+                    <i data-lucide="briefcase" class="w-4 h-4 text-sap-light"></i> 2.6 Years YOE at TCS
                   </span>
                   <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover/chip:text-sap-light group-hover/chip:translate-x-1 transition-all"></i>
                 </a>
@@ -320,24 +410,30 @@ function render() {
         </div>
       </section>
 
-      <!-- Section 1: Profile -->
+      <!-- Section 1: Comprehensive Profile Summary & Core Focus Areas -->
       <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
-          <span class="w-8 h-px bg-sap-light"></span> 01 / PROFILE SUMMARY
+          <span class="w-8 h-px bg-sap-light"></span> 01 / PROFESSIONAL PROFILE &amp; CORE FOCUS
         </div>
+        
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div class="lg:col-span-5">
             <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white leading-tight">
-              Technical depth,<br/><span class="italic text-slate-400 font-normal">enterprise context.</span>
+              Greenfield Delivery,<br/><span class="italic text-slate-400 font-normal">utility-sector fluency.</span>
             </h2>
+            <p class="text-xs font-mono text-sap-light mt-4">
+              KOLKATA, WEST BENGAL · TCS TECHNICAL LEAD
+            </p>
           </div>
+
           <div class="lg:col-span-7 space-y-6 text-slate-300 text-base leading-relaxed">
-            <p class="text-lg text-white font-medium">
-              Piyas Das is an SAP ABAP &amp; Workflow Specialist with 2.6+ years of experience delivering end-to-end automation across SAP IS-U and Salesforce landscapes at Tata Consultancy Services (TCS).
+            <p class="text-lg text-white font-medium leading-relaxed">
+              Piyas Das is an SAP ABAP &amp; Workflow Specialist with 2.6 years of hands-on experience architecting automation across SAP IS-U and Salesforce. Rather than working solely within existing objects, he has been trusted with greenfield build responsibility typically reserved for more senior engineers — designing 8+ SAP Workflows and 6+ IDoc structures from the ground up, and leading the technical migration bridging SAP CRM and Salesforce for utility contract processing.
             </p>
-            <p>
-              He has architected 8+ SAP Workflows (SWDD) and 6+ IDoc structures from scratch, led technical contract migration between SAP CRM and Salesforce, and delivered over 30 production RICEFW objects with rigorous technical design documentation.
+            <p class="text-slate-300 leading-relaxed">
+              His delivery spans the full RICEFW spectrum, with 30+ objects shipped to production, alongside four SAP certifications spanning ABAP Cloud, BTP, Fiori, and Generative AI. Piyas combines deep IS-U business-process fluency — Move-In, Move-Out, Switch-In/Out, Start/End of Supply — with modern ABAP Cloud exposure, making him well suited to both specialist utility-sector engagements and broader S/4HANA transformation programs.
             </p>
+
             <div class="pt-2">
               <a href="https://www.linkedin.com/in/piyas-das-031bb014a" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-sap-light font-mono text-xs font-semibold hover:underline">
                 View Official LinkedIn Profile <i data-lucide="external-link" class="w-4 h-4"></i>
@@ -345,16 +441,64 @@ function render() {
             </div>
           </div>
         </div>
+
+        <!-- Core Focus Areas (5 Pillars from PDF Page 1) -->
+        <div class="mt-16 pt-12 border-t border-slate-800">
+          <h3 class="font-serif text-2xl font-bold text-white mb-6">Core Focus Areas</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 font-sans text-xs text-slate-300">
+            
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3">
+              <span class="text-sap-light font-mono font-bold text-sm">01</span>
+              <div>
+                <strong class="text-white block mb-1">Greenfield SWDD &amp; IDoc Architecture</strong>
+                Greenfield SAP Workflow (SWDD) and IDoc/ALE architecture, built from scratch rather than maintained.
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3">
+              <span class="text-sap-light font-mono font-bold text-sm">02</span>
+              <div>
+                <strong class="text-white block mb-1">SAP IS-U ↔ Salesforce Integration</strong>
+                Bi-directional SAP IS-U to Salesforce integration via real-time OData services.
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3">
+              <span class="text-sap-light font-mono font-bold text-sm">03</span>
+              <div>
+                <strong class="text-white block mb-1">Utility Contract Lifecycle Ownership</strong>
+                Full process ownership of Move-In, Move-Out, Switch-In/Out, and Start/End of Supply.
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3">
+              <span class="text-sap-light font-mono font-bold text-sm">04</span>
+              <div>
+                <strong class="text-white block mb-1">Modern ABAP Cloud Readiness</strong>
+                Proficiency in CDS Views (3-layer model), AMDP HDB classes, and SAP BTP architecture.
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3 md:col-span-2 lg:col-span-1">
+              <span class="text-sap-light font-mono font-bold text-sm">05</span>
+              <div>
+                <strong class="text-white block mb-1">SAP CRM Technical Grounding</strong>
+                Web UI enhancements, One Order Framework, BOL/GenIL layer, and CRM Workbench configuration.
+              </div>
+            </div>
+
+          </div>
+        </div>
       </section>
 
-      <!-- Section 2: Capabilities (Interactive Bento Grid) -->
+      <!-- Section 2: Technical Expertise (7 Detailed Domains from PDF Page 2) -->
       <section id="capabilities" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center justify-between mb-8 flex-wrap gap-4">
           <div>
             <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-2">
-              <span class="w-8 h-px bg-sap-light"></span> 02 / TECHNICAL CAPABILITIES
+              <span class="w-8 h-px bg-sap-light"></span> 02 / TECHNICAL EXPERTISE
             </div>
-            <h2 class="font-serif text-4xl font-bold text-white">SAP Specializations</h2>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white">SAP Specializations</h2>
           </div>
 
           <!-- Capabilities Filter Buttons -->
@@ -380,47 +524,51 @@ function render() {
                   <i data-lucide="cpu" class="w-5 h-5 text-slate-500 group-hover:text-sap-light transition-colors"></i>
                 </div>
                 <h3 class="font-serif text-2xl font-bold text-white mb-2 group-hover:text-sap-light transition-colors">${c.title}</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">${c.desc}</p>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">${c.desc}</p>
               </div>
-              <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-800 font-mono text-[10px] text-slate-300">
-                ${c.tags.map(t => `<span class="bg-slate-800/80 px-2 py-0.5 rounded">${t}</span>`).join('')}
+              <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-800 font-mono text-[10px] text-slate-400">
+                ${c.tags.map(t => `<span class="bg-slate-800/80 px-2 py-0.5 rounded text-slate-300">${t}</span>`).join('')}
               </div>
             </div>
           `).join('')}
         </div>
       </section>
 
-      <!-- Section 3: Professional Experience (TCS) -->
+      <!-- Section 3: Professional Experience (TCS Detailed PDF Breakdown) -->
       <section id="experience" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
           <span class="w-8 h-px bg-sap-light"></span> 03 / CAREER EXPERIENCE
         </div>
-        <h2 class="font-serif text-4xl font-bold text-white mb-12">Production Delivery</h2>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-12">Production Delivery</h2>
 
-        <div class="glass-card rounded-3xl p-8 md:p-12 border border-slate-800">
-          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6 mb-8">
+        <div class="glass-card rounded-3xl p-8 md:p-12 border border-slate-800 space-y-8">
+          <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-6">
             <div>
-              <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs">FEB 2024 — PRESENT</span>
-              <h3 class="font-serif text-3xl font-bold text-white mt-2">Tata Consultancy Services (TCS)</h3>
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs font-semibold">FEB 2024 — PRESENT</span>
+              <h3 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Tata Consultancy Services (TCS)</h3>
               <p class="font-mono text-sm text-sap-light">Technical Lead · SAP ABAP Developer &amp; Workflow Specialist</p>
             </div>
             <div class="text-right font-mono text-xs text-slate-400">
-              <span>Kolkata, West Bengal</span>
+              <span class="block">Kolkata, West Bengal</span>
+              <span class="text-slate-500">Salesforce–SAP Transition Technical Owner</span>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-slate-300 text-sm leading-relaxed">
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            At TCS, Piyas is the technical owner for SAP IS-U workflow and integration work supporting the Salesforce–SAP transition program, spanning the full delivery lifecycle from workflow architecture through enhancement, data migration, performance tuning, and production support.
+          </p>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 text-slate-300 text-xs sm:text-sm leading-relaxed">
             <ul class="space-y-4 list-disc list-inside marker:text-sap-light">
-              <li><strong class="text-white">Workflow &amp; OData:</strong> Architected 8+ end-to-end SAP Workflows (SWDD) for IS-U processes triggered via Salesforce API calls with ~70% handoff reduction.</li>
-              <li><strong class="text-white">IDocs &amp; BAPIs:</strong> Designed and implemented 6+ IDoc structures from scratch; generated ALE interfaces using BDBG with tRFC port configuration.</li>
-              <li><strong class="text-white">Enhancements:</strong> Implemented 4+ BAdIs and Customer Exits facilitating Move-Out and Move-In contract processing across SAP IS-U.</li>
-              <li><strong class="text-white">Smartforms:</strong> Enhanced Invoice Billing Smartform with dynamic data rendering, logo uploads, and OTF-to-PDF conversion with automated email delivery (~35% accuracy gain).</li>
+              <li><strong class="text-white">Workflow &amp; OData:</strong> Architected 8+ end-to-end SAP Workflows (SWDD) for IS-U processes, triggered via Salesforce API through OData replication — cutting handoff effort by ~70%.</li>
+              <li><strong class="text-white">IDocs, BAPIs &amp; Migration:</strong> Designed 6+ IDoc structures and BAPIs from scratch, generated ALE interfaces with tRFC port configuration, and executed data migration via BDC/LSMW for Salesforce transition projects.</li>
+              <li><strong class="text-white">Enhancements:</strong> Implemented 4+ BAdIs and Customer Exits for Move-In/Move-Out contract processing, enabling seamless Salesforce–SAP IS-U integration.</li>
+              <li><strong class="text-white">Forms &amp; Module Pool:</strong> Enhanced Invoice Billing Smartform (barcode, logo, OTF-to-PDF, automated email) improving output accuracy ~35%; built CRM Delivery Notice Module Pool programs improving accuracy ~25%.</li>
             </ul>
             <ul class="space-y-4 list-disc list-inside marker:text-sap-light">
-              <li><strong class="text-white">Module Pool:</strong> Developed CRM Delivery Notice programs with date/time-bound contract data retrieval for BP display (~25% output accuracy boost).</li>
-              <li><strong class="text-white">RICEFW Delivery:</strong> Delivered 30+ RICEFW objects (Reports, ALV, Function Modules, IDocs, BAPIs) and authored 25+ technical design documents.</li>
-              <li><strong class="text-white">Unit Testing:</strong> Configured deadline monitoring, error-branch handling, and SWUS_WITH_REFERENCE debugging in live PRD.</li>
-              <li><strong class="text-white">Performance Tuning:</strong> Optimized 13+ ABAP Reports via Runtime Analysis and SQL Trace, cutting batch job runtime by ~45%.</li>
+              <li><strong class="text-white">RICEFW Delivery &amp; TDDs:</strong> Delivered 30+ RICEFW objects, reducing manual effort ~30%; authored 25+ Technical Design Documents, cutting rework ~20%.</li>
+              <li><strong class="text-white">Testing, Monitoring &amp; PRD Support:</strong> Configured deadline monitoring and error-branch handling across DEV/QAS/PRD for a defect-free go-live (~30% fewer post-production issues); provided L2/L3 support, debugging live workflows via SWUS WITH REFERENCE.</li>
+              <li><strong class="text-white">Performance Tuning:</strong> Optimized 13+ ABAP reports via Runtime Analysis and SQL Trace, cutting batch-job runtime by ~45%.</li>
             </ul>
           </div>
         </div>
@@ -457,7 +605,7 @@ function render() {
                   <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-500 group-hover:text-sap-light group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"></i>
                 </h3>
                 <p class="text-slate-300 text-sm leading-relaxed mt-3 mb-6">
-                  Migrated legacy SAP CRM-based utility contract management onto a Salesforce front-end while retaining SAP IS-U as the system of record.
+                  <strong class="text-white">Objective:</strong> Migrate legacy SAP CRM-based utility contract management onto a Salesforce front-end while retaining SAP IS-U as the system of record.
                 </p>
 
                 <ul class="space-y-3 font-sans text-xs sm:text-sm text-slate-300">
@@ -491,7 +639,7 @@ function render() {
                   <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-500 group-hover:text-sap-light group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"></i>
                 </h3>
                 <p class="text-slate-300 text-sm leading-relaxed mt-3 mb-6">
-                  Improved CRM Web UI data clarity and reduced erroneous billing/system triggers through price-key configuration and RFC-based CRM-IS-U integration.
+                  <strong class="text-white">Objective:</strong> Improve CRM Web UI data clarity and reduce erroneous billing/system triggers through price-key configuration and RFC-based CRM-IS-U integration.
                 </p>
 
                 <ul class="space-y-3 font-sans text-xs sm:text-sm text-slate-300">
@@ -523,12 +671,92 @@ function render() {
         </div>
       </section>
 
-      <!-- Section 5: Certifications Grid -->
+      <!-- Section 5: Education, Mentorship & Career Intent (Page 4 of PDF) -->
+      <section id="education" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
+        <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
+          <span class="w-8 h-px bg-sap-light"></span> 05 / ACADEMIC BACKGROUND &amp; LEADERSHIP
+        </div>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-12">
+          Education &amp; Mentorship
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Education Cards Left -->
+          <div class="lg:col-span-7 space-y-4">
+            <!-- College -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800 flex items-center justify-between hover:border-sap-light/40 transition-all">
+              <div>
+                <span class="px-2.5 py-1 rounded bg-sap-blue/20 border border-sap-blue/40 text-sap-light font-mono text-[10px] uppercase font-bold">2019 — 2023</span>
+                <h3 class="font-serif text-xl font-bold text-white mt-2">B.Tech in Information Technology</h3>
+                <p class="text-xs text-slate-400 font-sans mt-0.5">Kalyani Government Engineering College</p>
+              </div>
+              <div class="text-right">
+                <span class="font-serif text-2xl sm:text-3xl font-bold text-emerald-400 block">8.62</span>
+                <span class="font-mono text-[10px] text-slate-400 uppercase">CGPA / 10</span>
+              </div>
+            </div>
+
+            <!-- Class XII -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800 flex items-center justify-between hover:border-sap-light/40 transition-all">
+              <div>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 font-mono text-[10px] uppercase font-bold">2019 · CBSE</span>
+                <h3 class="font-serif text-lg font-bold text-white mt-2">Class XII Higher Secondary</h3>
+                <p class="text-xs text-slate-400 font-sans mt-0.5">Jawahar Navodaya Vidyalaya</p>
+              </div>
+              <div class="text-right">
+                <span class="font-serif text-2xl font-bold text-white block">88.7%</span>
+                <span class="font-mono text-[10px] text-slate-400 uppercase">Percentage</span>
+              </div>
+            </div>
+
+            <!-- Class X -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800 flex items-center justify-between hover:border-sap-light/40 transition-all">
+              <div>
+                <span class="px-2.5 py-1 rounded bg-slate-800 text-slate-400 font-mono text-[10px] uppercase font-bold">2017 · CBSE</span>
+                <h3 class="font-serif text-lg font-bold text-white mt-2">Class X Secondary School</h3>
+                <p class="text-xs text-slate-400 font-sans mt-0.5">Jawahar Navodaya Vidyalaya</p>
+              </div>
+              <div class="text-right">
+                <span class="font-serif text-2xl font-bold text-emerald-400 block">10.0</span>
+                <span class="font-mono text-[10px] text-slate-400 uppercase">CGPA / 10</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mentorship & Career Intent Right -->
+          <div class="lg:col-span-5">
+            <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 space-y-6 bg-gradient-to-b from-slate-900/90 to-slate-950/90 h-full flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex items-center gap-2 font-mono text-xs text-amber-400 font-bold uppercase tracking-wider">
+                  <i data-lucide="users" class="w-4 h-4 text-amber-400"></i> Mentorship &amp; Leadership Readiness
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-white leading-snug">Technical Lead &amp; Mentor</h3>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  Currently operating as a Technical Lead at TCS, Piyas has mentored two freshers into SAP ABAP development — further specializing one into CRM technical work and the other into IS-U technical and functional skills — reflecting his readiness for lead-level ownership that extends beyond individual delivery.
+                </p>
+              </div>
+
+              <div class="pt-6 border-t border-slate-800 space-y-3 font-mono text-xs">
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between">
+                  <span class="text-slate-400">Notice Period</span>
+                  <span class="text-emerald-400 font-bold">Serving (Last Day: 14-Sep-2026)</span>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-between">
+                  <span class="text-slate-400">Relocation</span>
+                  <span class="text-sap-light font-bold">Open for the right opportunity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Certifications Grid (Detailed Descriptions from Page 4 of PDF) -->
       <section id="certifications" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
-          <span class="w-8 h-px bg-sap-light"></span> 05 / VERIFIED SAP CREDENTIALS
+          <span class="w-8 h-px bg-sap-light"></span> 06 / VERIFIED SAP CREDENTIALS
         </div>
-        <h2 class="font-serif text-4xl font-bold text-white mb-12">4x SAP Certifications</h2>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-12">4x SAP Certifications</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           ${certifications.map((c, idx) => `
@@ -541,10 +769,10 @@ function render() {
                   </span>
                 </div>
                 <h3 class="font-serif text-xl font-bold text-white group-hover:text-sap-light transition-colors mb-2">${c.title}</h3>
-                <p class="text-xs text-slate-400 font-sans">${c.org}</p>
-                <p class="text-xs text-slate-500 font-mono mt-1">${c.validity}</p>
+                <p class="text-xs text-slate-400 font-sans">${c.org} · ${c.validity}</p>
+                <p class="text-slate-300 text-xs leading-relaxed mt-3 mb-4">${c.desc}</p>
               </div>
-              <div class="pt-6 mt-6 border-t border-slate-800 flex items-center justify-between font-mono text-xs text-sap-light group-hover:underline">
+              <div class="pt-4 border-t border-slate-800 flex items-center justify-between font-mono text-xs text-sap-light group-hover:underline">
                 <span>View Credential</span>
                 <i data-lucide="external-link" class="w-4 h-4"></i>
               </div>
@@ -553,10 +781,10 @@ function render() {
         </div>
       </section>
 
-      <!-- Section 6: Journal / Field Notes & Articles -->
+      <!-- Section 7: Journal / Field Notes & Articles -->
       <section id="journal" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
-          <span class="w-8 h-px bg-sap-light"></span> 06 / JOURNAL —— NOTES &amp; ARTICLES
+          <span class="w-8 h-px bg-sap-light"></span> 07 / JOURNAL —— NOTES &amp; ARTICLES
         </div>
         <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-12">
           Field notes from SAP delivery.
@@ -648,7 +876,7 @@ function render() {
         <p class="font-mono text-xs text-slate-500 mt-6">* Sample articles — full write-ups coming soon.</p>
       </section>
 
-      <!-- Section 6: Contact & Resume CTA -->
+      <!-- Section 8: Contact & Resume CTA -->
       <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="glass-card rounded-3xl p-8 md:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-12">
           
@@ -656,7 +884,7 @@ function render() {
             <span class="font-mono text-xs text-sap-light uppercase tracking-widest">GET IN TOUCH</span>
             <h2 class="font-serif text-4xl font-bold text-white leading-tight">Let's build the next SAP milestone.</h2>
             <p class="text-slate-300 text-sm leading-relaxed">
-              Open to SAP ABAP Developer / Consultant, SAP IS-U Technical, and SAP CRM Technical roles — especially in utility-sector SAP landscapes and consulting.
+              Actively exploring SAP ABAP Developer / Consultant roles and SAP IS-U + CRM Technical roles — particularly within utility-sector SAP landscapes or Big 4 consulting practices.
             </p>
             <div class="space-y-3 font-mono text-xs text-slate-300 pt-4">
               <p class="flex items-center gap-3">
@@ -688,7 +916,7 @@ function render() {
               <button type="submit" class="w-full py-4 rounded-xl bg-sap-blue hover:bg-blue-700 text-white font-semibold text-sm shadow-xl shadow-sap-blue/30 flex items-center justify-center gap-2 transition-all">
                 Send Email to Piyas <i data-lucide="send" class="w-4 h-4"></i>
               </button>
-              <p id="form-note" class="text-center font-mono text-[11px] text-slate-400">This opens your default email client addressed to piyasdas89@gmail.com</p>
+              <p id="form-note" class="text-center font-mono text-[11px] text-slate-400">Direct background email delivery to piyasdas89@gmail.com</p>
             </form>
           </div>
 
@@ -730,27 +958,25 @@ function render() {
     ` : ''}
   `;
 
-  
-function initScrollObserver() {
-  const observerOptions = {
-    root: null,
-    rootMargin: '-30px 0px -30px 0px',
-    threshold: 0.08
-  };
+  function initScrollObserver() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30px 0px -30px 0px',
+      threshold: 0.08
+    };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      } else {
-        // Bi-directional continuous animation: remove class when element leaves view
-        entry.target.classList.remove('is-visible');
-      }
-    });
-  }, observerOptions);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    }, observerOptions);
 
-  document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-}
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+  }
 
   initScrollObserver();
 
