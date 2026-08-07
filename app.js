@@ -426,45 +426,100 @@ function render() {
         </div>
       </section>
 
-      <!-- Section 4: Projects (Case Studies) -->
+      <!-- Section 4: Projects (Key Project Delivery Showcase) -->
       <section id="projects" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto reveal-on-scroll">
         <div class="flex items-center gap-3 font-mono text-xs text-sap-light uppercase tracking-widest mb-4">
-          <span class="w-8 h-px bg-sap-light"></span> 04 / PROJECT CASE STUDIES
+          <span class="w-8 h-px bg-sap-light"></span> 04 / PROJECTS —— KEY PROJECT DELIVERY
         </div>
-        <h2 class="font-serif text-4xl font-bold text-white mb-12">Featured Implementations</h2>
+        <h2 class="font-serif text-4xl sm:text-5xl font-bold text-white mb-12">
+          Featured Implementations
+        </h2>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Project 1 -->
-          <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border border-slate-800">
-            <div>
-              <span class="font-mono text-xs text-sap-light">MAR 2025 — APR 2026</span>
-              <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">Salesforce to SAP IS-U Integration</h3>
-              <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                Migrated utility contract management from SAP CRM to a Salesforce front-end while retaining SAP IS-U as the system of record.
-              </p>
+        <div class="space-y-12">
+          <!-- Project 1 (Image Left, Content Right) -->
+          <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 group hover:border-sap-light/50 transition-all duration-500 reveal-on-scroll stagger-1">
+            <!-- Image Left -->
+            <div class="lg:col-span-5 relative min-h-[260px] lg:min-h-full overflow-hidden group/img">
+              <img src="assets/project-salesforce-isu.jpg" alt="Salesforce to SAP IS-U Integration" class="absolute inset-0 w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 brightness-90" />
+              <div class="absolute inset-0 bg-gradient-to-r from-transparent to-slate-950/90 hidden lg:block"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent lg:hidden"></div>
+              <span class="absolute top-6 left-6 font-mono text-3xl font-bold text-white/30 z-10">01</span>
             </div>
-            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-              <p>✦ 8+ IS-U Workflows Built (Move-In, Move-Out, Switch-In/Out)</p>
-              <p>✦ 35% Payload Error Reduction via real-time OData</p>
-              <p>✦ 70% Less Legacy CRM Dependency</p>
+
+            <!-- Content Right -->
+            <div class="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-between space-y-6">
+              <div>
+                <div class="font-mono text-xs text-sap-light uppercase font-bold tracking-wider mb-2">
+                  MAR 2025 — APR 2026 · WORKFLOW &amp; INTEGRATION ARCHITECT
+                </div>
+                <h3 class="font-serif text-3xl font-bold text-white group-hover:text-sap-light transition-colors flex items-center justify-between">
+                  <span>Salesforce ➔ SAP IS-U Integration</span>
+                  <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-500 group-hover:text-sap-light group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"></i>
+                </h3>
+                <p class="text-slate-300 text-sm leading-relaxed mt-3 mb-6">
+                  Migrated legacy SAP CRM-based utility contract management onto a Salesforce front-end while retaining SAP IS-U as the system of record.
+                </p>
+
+                <ul class="space-y-3 font-sans text-xs sm:text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sap-light font-mono font-bold">➔</span>
+                    <span>Built 8+ IS-U workflows from scratch (Move-In, Move-Out, Switch-In/Out, End/Start of Supply, Internal Start/Stop).</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sap-light font-mono font-bold">➔</span>
+                    <span>Reduced payload errors ~35% via real-time OData service optimization.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sap-light font-mono font-bold">➔</span>
+                    <span>Refactored 10+ RICEFW objects for a near-zero-defect go-live; cut legacy CRM dependency ~70%.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="glass-card rounded-2xl p-8 flex flex-col justify-between border border-slate-800">
-            <div>
-              <span class="font-mono text-xs text-sap-light">APR 2024 — DEC 2025</span>
-              <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">CRM Price Keys &amp; IS-U Billing Enhancement</h3>
-              <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                Improved CRM Web UI data clarity and reduced incorrect billing triggers through price-key configuration and RFC integration.
-              </p>
+          <!-- Project 2 (Content Left, Image Right) -->
+          <div class="glass-card rounded-3xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 group hover:border-sap-light/50 transition-all duration-500 reveal-on-scroll stagger-2">
+            <!-- Content Left -->
+            <div class="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-between space-y-6 order-2 lg:order-1">
+              <div>
+                <div class="font-mono text-xs text-sap-light uppercase font-bold tracking-wider mb-2">
+                  APR 2024 — DEC 2025 · ABAP DEVELOPER
+                </div>
+                <h3 class="font-serif text-3xl font-bold text-white group-hover:text-sap-light transition-colors flex items-center justify-between">
+                  <span>CRM Price Keys &amp; IS-U Billing Enhancement</span>
+                  <i data-lucide="arrow-up-right" class="w-6 h-6 text-slate-500 group-hover:text-sap-light group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"></i>
+                </h3>
+                <p class="text-slate-300 text-sm leading-relaxed mt-3 mb-6">
+                  Improved CRM Web UI data clarity and reduced erroneous billing/system triggers through price-key configuration and RFC-based CRM-IS-U integration.
+                </p>
+
+                <ul class="space-y-3 font-sans text-xs sm:text-sm text-slate-300">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sap-light font-mono font-bold">➔</span>
+                    <span>Configured 42 custom SAP CRM Price Keys via SPRO.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sap-light font-mono font-bold">➔</span>
+                    <span>Built RFC-based CRM-IS-U integrations cutting incorrect system triggers ~20%.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-sap-light font-mono font-bold">➔</span>
+                    <span>Automated Master Data Templates via EPRODCUST — lifting UI data clarity ~30%.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 font-mono text-xs text-slate-300 space-y-1">
-              <p>✦ 42 Custom SAP CRM Price Keys configured via SPRO</p>
-              <p>✦ 20% Reduction in incorrect system triggers</p>
-              <p>✦ Master Data Templates (MDT) automation via EPRODCUST</p>
+
+            <!-- Image Right -->
+            <div class="lg:col-span-5 relative min-h-[260px] lg:min-h-full overflow-hidden group/img order-1 lg:order-2">
+              <img src="assets/project-ricefw-billing.jpg" alt="CRM Price Keys & IS-U Billing" class="absolute inset-0 w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 brightness-90" />
+              <div class="absolute inset-0 bg-gradient-to-l from-transparent to-slate-950/90 hidden lg:block"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent lg:hidden"></div>
+              <span class="absolute top-6 right-6 font-mono text-3xl font-bold text-white/30 z-10">02</span>
             </div>
           </div>
+
         </div>
       </section>
 
